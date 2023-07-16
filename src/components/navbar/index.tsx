@@ -25,7 +25,7 @@ export default function Navbar() {
   const router = useRouter();
 
   return (
-    <nav className="h-12 px-12 py-2 bg-zinc-400 flex justify-between items-center sticky top-0">
+    <nav className="h-12 px-12 lg:px-24 py-2 bg-zinc-400 flex justify-between items-center sticky top-0">
       <div className="flex items-center">
         <h2 className="text-2xl font-bold">KGEC</h2>
       </div>
