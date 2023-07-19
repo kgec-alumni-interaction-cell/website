@@ -1,7 +1,7 @@
 function Footer() {
   return (
-    <footer className=" bg-blue-300 min-w-full flex justify-center">
-      <p className="text-sm py-5 text-blue-600 font-bold">
+    <footer className=" bg-zinc-300/50 min-w-full h-[12px] py-5 items-center flex justify-center">
+      <p className="text-sm font-bold leading-none">
         ©KGEC 2021, All Right Reserved
       </p>
     </footer>
