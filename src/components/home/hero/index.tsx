@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 export default function HomeHero() {
   return (
-    <section className="h-[calc(100vh-12px)] bg-sky-100 min-w-full flex flex-col">
+    <section className="h-[calc(100vh-12px)] bg-zinc-100 min-w-full flex flex-col">
       <div className="min-w-full flex lg:flex-row flex-col p-12 lg:p-24 pb-0 lg:pb-0 h-full">
         <div className="w-full lg:w-[60%] flex flex-col gap-8 justify-center h-full">
           <h2 className="text-[3rem] lg:text-[4rem] leading-[1.1] font-black">
@@ -35,7 +35,7 @@ export default function HomeHero() {
           />
         </div>
       </div>
-      <div className="bg-amber-100 h-full flex justify-center items-center">
+      <div className="bg-zinc-200 h-full flex justify-center items-center">
         <p className="text-lg lg:text-3xl font-semibold">Lorem ipsum, dolor sit amet </p>
       </div>
     </section>
