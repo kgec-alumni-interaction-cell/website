@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useState } from "react";
 
 const formatDisplayNumber = (num: number) => {
@@ -54,16 +55,16 @@ export default function HomeHero() {
       </div>
       <div className="bg-zinc-200 h-full flex flex-col lg:flex-row gap-10 justify-center lg:gap-48 items-center">
         {/* <p className="text-lg lg:text-3xl font-semibold">Lorem ipsum, dolor sit amet </p> */}
-        <a href="/signup" className="w-full text-center lg:text-right">
+        <Link href="/signup" className="w-full text-center lg:text-right">
           <button className="bg-zinc-600 hover:bg-zinc-500 text-white font-bold w-1/2 rounded-lg lg:w-64 text-lg lg:text-2xl py-4 lg:py-5">
             Sign Up
           </button>
-        </a>
-        <a href="/login" className="w-full text-center lg:text-left">
+        </Link>
+        <Link href="/login" className="w-full text-center lg:text-left">
           <button className="bg-zinc-500 text-white hover:bg-zinc-400 font-bold w-1/2 rounded-lg lg:w-64 text-lg lg:text-2xl py-4 lg:py-5">
             Log In
           </button>
-        </a>
+        </Link>
       </div>
     </section>
   );
