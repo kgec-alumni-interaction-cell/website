@@ -32,52 +32,48 @@ function AlumiBase() {
         <div className="min-w-full lg:h-[calc(100vh-216px-48px-40px)] flex flex-col bg-zinc-100 p-8 lg:px-24 lg:py-14">
           <p className="text-3xl mb-10">Why You Should Care to Register</p>
           <p className="text-2xl mb-2">As a Student of KGEC</p>
-          <p className="mb-10 lg:text-lg">
-            <ul className="list-disc px-5">
-              <li>
-                By registering on the college alumni website, students of KGEC
-                gain access to a vast network of successful graduates from
-                diverse fields.
-              </li>
-              <li>
-                Moreover, staying connected with alumni fosters a sense of
-                belonging and philanthropy, encouraging students to give back
-                and positively impact the college community.{" "}
-              </li>
-              <li>
-                Joining the alumni website opens doors to an array of
-                possibilities, ensuring that the journey through KGEC transcends
-                graduation day and continues to evolve with each new connection
-                made.
-              </li>
-            </ul>
-          </p>
+          <ul className="list-disc px-5 mb-10 lg:text-lg">
+            <li>
+              By registering on the college alumni website, students of KGEC
+              gain access to a vast network of successful graduates from diverse
+              fields.
+            </li>
+            <li>
+              Moreover, staying connected with alumni fosters a sense of
+              belonging and philanthropy, encouraging students to give back and
+              positively impact the college community.{" "}
+            </li>
+            <li>
+              Joining the alumni website opens doors to an array of
+              possibilities, ensuring that the journey through KGEC transcends
+              graduation day and continues to evolve with each new connection
+              made.
+            </li>
+          </ul>
 
           <p className="text-2xl mb-2">As an Alumnus of KGEC</p>
-          <p className="mb-10 lg:text-lg">
-            <ul className="list-disc px-5">
-              <li>
-                For the esteemed alumni of KGEC, registering on the college
-                alumni website presents an opportunity to reconnect with
-                cherished memories and former batchmates.
-              </li>
-              <li>
-                Through this platform, they can extend their support and
-                guidance to current students.
-              </li>
-              <li>
-                The alumni network becomes an invaluable resource, offering
-                professional growth prospects through partnerships,
-                collaborations, and career advancements.
-              </li>
-              <li>
-                Embracing this connection, alumni can find fulfillment in giving
-                back to the college that played an integral role in shaping
-                their lives, and in witnessing the impact of their contributions
-                on future generations of KGEC graduates.
-              </li>
-            </ul>
-          </p>
+          <ul className="list-disc px-5 mb-10 lg:text-lg">
+            <li>
+              For the esteemed alumni of KGEC, registering on the college alumni
+              website presents an opportunity to reconnect with cherished
+              memories and former batchmates.
+            </li>
+            <li>
+              Through this platform, they can extend their support and guidance
+              to current students.
+            </li>
+            <li>
+              The alumni network becomes an invaluable resource, offering
+              professional growth prospects through partnerships,
+              collaborations, and career advancements.
+            </li>
+            <li>
+              Embracing this connection, alumni can find fulfillment in giving
+              back to the college that played an integral role in shaping their
+              lives, and in witnessing the impact of their contributions on
+              future generations of KGEC graduates.
+            </li>
+          </ul>
         </div>
       </Layout>
     );
