@@ -13,7 +13,7 @@ export default function HomeMNV() {
         </li>
         <li>
           KGEC fosters a thriving community of eager learners, emphasizing both
-          academic and personal growth. The college's outcome-based education
+          academic and personal growth. The college&apos;s outcome-based education
           approach puts students at the center of the learning process. The
           campus spans 75 acres and features state-of-the-art infrastructure,
           including seminar halls, E-classrooms, and a well-equipped library.
@@ -29,7 +29,7 @@ export default function HomeMNV() {
         <li>
           Faculty members are involved in research activities and mentor PhD
           students. The college takes pride in its national-level journal,
-          'REASON-A Technical Journal.' Preparations for NAAC Accreditation are
+          &apos;REASON-A Technical Journal.&apos; Preparations for NAAC Accreditation are
           underway, as KGEC strives for excellence in education, research, and
           overall growth, empowering students to shine in the world of
           engineering.
