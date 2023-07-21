@@ -70,7 +70,7 @@ export default function HomeHero() {
         <div className="flex-grow lg:w-full lg:ml-48">
           <button
             onClick={() => router.push("/alumnibase")}
-            className="bg-zinc-600 hover:bg-zinc-700 text-white font-bold text-md lg:text-2xl lg:min-w-fit px-5 lg:px-7 py-7 lg:py-10 flex items-center"
+            className="bg-zinc-600 hover:bg-zinc-700 text-white font-bold text-md lg:text-2xl lg:min-w-fit px-[24px] lg:px-[24px] py-[8px] lg:py-[12px] flex items-center"
           >
             Visit the Alumni Base
             <span className="ml-3">
