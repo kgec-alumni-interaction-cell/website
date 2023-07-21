@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useState } from "react";
-import { signIn } from "next-auth/react";
+import { useRouter } from "next/router";
 
 const formatDisplayNumber = (num: number) => {
   let len = num.toString().length;
@@ -18,9 +18,11 @@ export default function HomeHero() {
   const [numStudents, setNumStudents] = useState<number>(5437);
   const [numCompanies, setNumCompanies] = useState<number>(53);
 
+  const router = useRouter();
+
   return (
     <section className="h-[calc(100vh-12px)] bg-zinc-100 min-w-full flex flex-col">
-      <div className="min-w-full flex lg:flex-row flex-col p-12 lg:p-24 pb-0 lg:pb-0 h-full">
+      <div className="min-w-full flex lg:flex-row flex-col p-8 lg:p-24 pb-0 lg:pb-0 h-full">
         <div className="w-full lg:w-[60%] flex flex-col gap-8 justify-center h-full">
           <h3 className="text-[1.5rem] lg:text-[3rem] leading-[1.1] font-black">
             Kalyani Government Engineering College
@@ -50,25 +52,27 @@ export default function HomeHero() {
             </div>
           </div>
         </div>
-        <div className="w-full lg:w-[40%] hidden lg:block">
+        <div className="w-full lg:w-[40%] hidden lg:block pb-24">
           <img
-            src="/hero-image.png"
+            src="/old_campus.jpg"
             alt="hero image"
-            className="object-fill w-[900] h-[900]"
+            className="object-fill w-[900] h-[900] rounded-full border-zinc-900 border-[3px]"
           />
         </div>
       </div>
       <div className="bg-zinc-200 h-full flex flex-col gap-10 md:flex-row items-center justify-between lg:justify-around py-24">
         <div className="flex-grow lg:w-full lg:text-right lg:mr-48">
-          <p className="text-2xl lg:text-3xl font-medium w-full">Are you a KGECian?</p>
+          <p className="text-2xl lg:text-3xl font-medium w-full">
+            Are you a KGECian?
+          </p>
         </div>
 
         <div className="flex-grow lg:w-full lg:ml-48">
           <button
-            onClick={() => signIn()}
-            className="bg-zinc-600 hover:bg-zinc-700 text-white font-bold text-md lg:text-2xl lg:min-w-fit px-5 lg:px-7 py-7 lg:py-10 flex items-center"
+            onClick={() => router.push("/alumnibase")}
+            className="bg-zinc-600 hover:bg-zinc-700 text-white font-bold text-md lg:text-2xl lg:min-w-fit px-[24px] lg:px-[24px] py-[8px] lg:py-[12px] flex items-center"
           >
-            Explore the Alumni Portal
+            Visit the Alumni Base
             <span className="ml-3">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
