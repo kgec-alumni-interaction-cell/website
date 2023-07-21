@@ -16,8 +16,8 @@ export const navItems = [
     path: "/scholarships",
   },
   {
-    name: "Digital Database",
-    path: "/digitaldb",
+    name: "Alumni Base",
+    path: "/alumnibase",
   },
 ];
 
@@ -27,7 +27,7 @@ export default function Navbar() {
   return (
     <nav className="h-12 px-12 lg:px-24 py-2 bg-zinc-300/50 backdrop-blur-sm flex justify-between items-center sticky top-0">
       <div className="flex items-center">
-        <h2 className="font-bold">kgec alumni asscoiation</h2>
+        <h2 className="font-bold">KGEC Alumni Asscoiation</h2>
       </div>
       <div className="items-center hidden lg:flex">
         {navItems.map((item) => (
