@@ -52,11 +52,11 @@ export default function HomeHero() {
             </div>
           </div>
         </div>
-        <div className="w-full lg:w-[40%] hidden lg:block">
+        <div className="w-full lg:w-[40%] hidden lg:block pb-24">
           <img
-            src="/hero-image.png"
+            src="/old_campus.jpg"
             alt="hero image"
-            className="object-fill w-[900] h-[900]"
+            className="object-fill w-[900] h-[900] rounded-full border-zinc-900 border-[3px]"
           />
         </div>
       </div>
