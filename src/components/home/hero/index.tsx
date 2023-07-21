@@ -20,7 +20,7 @@ export default function HomeHero() {
 
   return (
     <section className="h-[calc(100vh-12px)] bg-zinc-100 min-w-full flex flex-col">
-      <div className="min-w-full flex lg:flex-row flex-col p-12 lg:p-24 pb-0 lg:pb-0 h-full">
+      <div className="min-w-full flex lg:flex-row flex-col p-8 lg:p-24 pb-0 lg:pb-0 h-full">
         <div className="w-full lg:w-[60%] flex flex-col gap-8 justify-center h-full">
           <h3 className="text-[1.5rem] lg:text-[3rem] leading-[1.1] font-black">
             Kalyani Government Engineering College
