@@ -8,11 +8,11 @@ function AlumiBase() {
   if (!session)
     return (
       <Layout>
-        <section className="min-w-ful flex flex-col p-8 py-14 lg:p-24">
+        <section className="min-w-ful flex flex-col p-8 py-14 lg:p-20">
           <div className="flex-grow mx-auto">
             <button
               onClick={() => signIn()}
-              className="bg-zinc-600 hover:bg-zinc-700 text-white font-bold text-md lg:text-2xl lg:min-w-fit px-3 lg:px-5 py-5 lg:py-6 flex items-center"
+              className="bg-zinc-600 hover:bg-zinc-700 text-white font-bold text-md lg:text-2xl lg:min-w-fit px-[24px] lg:px-[24px] py-[8px] lg:py-[12px] flex items-center"
             >
               Register or Log In
               <span className="ml-3">
@@ -29,32 +29,54 @@ function AlumiBase() {
           </div>
         </section>
 
-        <div className="min-w-full lg:h-[calc(100vh-272px-48px-40px)] flex flex-col bg-zinc-100 p-8 lg:px-24 lg:py-14">
+        <div className="min-w-full lg:h-[calc(100vh-216px-48px-40px)] flex flex-col bg-zinc-100 p-8 lg:px-24 lg:py-14">
           <p className="text-3xl mb-10">Why You Should Care to Register</p>
           <p className="text-2xl mb-2">As a Student of KGEC</p>
           <p className="mb-10 lg:text-lg">
-            By registering on the college alumni website, students of KGEC gain
-            access to a vast network of successful graduates from diverse
-            fields. Moreover, staying connected with alumni fosters a sense of
-            belonging and philanthropy, encouraging students to give back and
-            positively impact the college community. Joining the alumni website
-            opens doors to an array of possibilities, ensuring that the journey
-            through KGEC transcends graduation day and continues to evolve with
-            each new connection made.
+            <ul className="list-disc px-5">
+              <li>
+                By registering on the college alumni website, students of KGEC
+                gain access to a vast network of successful graduates from
+                diverse fields.
+              </li>
+              <li>
+                Moreover, staying connected with alumni fosters a sense of
+                belonging and philanthropy, encouraging students to give back
+                and positively impact the college community.{" "}
+              </li>
+              <li>
+                Joining the alumni website opens doors to an array of
+                possibilities, ensuring that the journey through KGEC transcends
+                graduation day and continues to evolve with each new connection
+                made.
+              </li>
+            </ul>
           </p>
 
           <p className="text-2xl mb-2">As an Alumnus of KGEC</p>
           <p className="mb-10 lg:text-lg">
-            For the esteemed alumni of KGEC, registering on the college alumni
-            website presents an opportunity to reconnect with cherished memories
-            and former batchmates. Through this platform, they can extend their
-            support and guidance to current students. The alumni network becomes
-            an invaluable resource, offering professional growth prospects
-            through partnerships, collaborations, and career advancements.
-            Embracing this connection, alumni can find fulfillment in giving
-            back to the college that played an integral role in shaping their
-            lives, and in witnessing the impact of their contributions on future
-            generations of KGEC graduates.
+            <ul className="list-disc px-5">
+              <li>
+                For the esteemed alumni of KGEC, registering on the college
+                alumni website presents an opportunity to reconnect with
+                cherished memories and former batchmates.
+              </li>
+              <li>
+                Through this platform, they can extend their support and
+                guidance to current students.
+              </li>
+              <li>
+                The alumni network becomes an invaluable resource, offering
+                professional growth prospects through partnerships,
+                collaborations, and career advancements.
+              </li>
+              <li>
+                Embracing this connection, alumni can find fulfillment in giving
+                back to the college that played an integral role in shaping
+                their lives, and in witnessing the impact of their contributions
+                on future generations of KGEC graduates.
+              </li>
+            </ul>
           </p>
         </div>
       </Layout>
