@@ -58,29 +58,17 @@ export default function HomeHero() {
           />
         </div>
       </div>
-      <div className="bg-zinc-200 h-full flex flex-col md:flex-row items-center justify-between py-24">
-        <button
-          onClick={() => signIn()}
-          className="bg-zinc-600 hover:bg-zinc-700 text-white font-bold text-lg lg:text-2xl lg:min-w-fit px-7 lg:px-10 py-7 lg:py-12 lg:mx-24 flex items-center"
-        >
-          Enter the Alumni Portal
-          <span className="ml-3">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="1em"
-              fill="#ffffff"
-              viewBox="0 0 512 512"
-            >
-              <path d="M217.9 105.9L340.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L217.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1L32 320c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM352 416l64 0c17.7 0 32-14.3 32-32l0-256c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l64 0c53 0 96 43 96 96l0 256c0 53-43 96-96 96l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32z" />
-            </svg>
-          </span>
-        </button>
+      <div className="bg-zinc-200 h-full flex flex-col gap-10 md:flex-row items-center justify-between lg:justify-around py-24">
+        <div className="flex-grow lg:w-full lg:text-right lg:mr-48">
+          <p className="text-2xl lg:text-3xl font-medium w-full">Are you a KGECian?</p>
+        </div>
 
-        <Link href="https://kgec.edu.in">
+        <div className="flex-grow lg:w-full lg:ml-48">
           <button
-            className="hidden lg:flex bg-zinc-500 hover:bg-zinc-600 text-white font-bold text-lg lg:text-2xl lg:min-w-fit px-7 lg:px-10 py-7 lg:py-12 lg:mx-24 items-center"
+            onClick={() => signIn()}
+            className="bg-zinc-600 hover:bg-zinc-700 text-white font-bold text-md lg:text-2xl lg:min-w-fit px-5 lg:px-7 py-7 lg:py-10 flex items-center"
           >
-            Visit College Website
+            Explore the Alumni Portal
             <span className="ml-3">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -88,16 +76,11 @@ export default function HomeHero() {
                 fill="#ffffff"
                 viewBox="0 0 512 512"
               >
-                <path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z" />
+                <path d="M217.9 105.9L340.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L217.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1L32 320c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM352 416l64 0c17.7 0 32-14.3 32-32l0-256c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l64 0c53 0 96 43 96 96l0 256c0 53-43 96-96 96l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32z" />
               </svg>
             </span>
           </button>
-        </Link>
-
-        <button className="hidden lg:flex bg-zinc-400 hover:bg-zinc-500 text-white font-bold text-xl lg:text-2xl px-8 lg:px-10 py-7 lg:py-12 lg:mx-24 items-center">
-          Another Thing
-        </button>
-        <p className="text-sm lg:hidden">...or keep scrolling to learn more</p>
+        </div>
       </div>
     </section>
   );
