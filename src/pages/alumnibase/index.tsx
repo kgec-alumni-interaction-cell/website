@@ -8,7 +8,7 @@ function AlumiBase() {
   if (!session)
     return (
       <Layout>
-        <section className="min-w-ful flex flex-col p-8 py-14 lg:p-20">
+        <section className="bg-zinc-100 min-w-ful flex flex-col p-8 py-14 lg:p-20">
           <div className="flex-grow mx-auto">
             <button
               onClick={() => signIn()}
@@ -29,7 +29,7 @@ function AlumiBase() {
           </div>
         </section>
 
-        <div className="min-w-full lg:h-[calc(100vh-216px-48px-40px)] flex flex-col bg-zinc-100 p-8 lg:px-24 lg:py-14">
+        <div className="min-w-full lg:h-[calc(100vh-216px-48px-40px)] flex flex-col bg-zinc-200 p-8 lg:px-24 lg:py-14">
           <p className="text-3xl mb-10">Why You Should Care to Register</p>
           <p className="text-2xl mb-2">As a Student of KGEC</p>
           <ul className="list-disc px-5 mb-10 lg:text-lg">
