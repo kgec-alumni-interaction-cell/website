@@ -12,7 +12,7 @@ function AlumiBase() {
           <div className="flex-grow mx-auto">
             <button
               onClick={() => signIn()}
-              className="bg-zinc-600 hover:bg-zinc-700 text-white font-bold text-md lg:text-2xl lg:min-w-fit px-5 lg:px-7 py-7 lg:py-10 flex items-center"
+              className="bg-zinc-600 hover:bg-zinc-700 text-white font-bold text-md lg:text-2xl lg:min-w-fit px-3 lg:px-5 py-5 lg:py-6 flex items-center"
             >
               Register or Log In
               <span className="ml-3">
@@ -29,7 +29,7 @@ function AlumiBase() {
           </div>
         </section>
 
-        <div className="min-w-full lg:h-[calc(100vh-304px-48px-40px)] flex flex-col bg-zinc-100 p-8 lg:px-24 lg:py-14">
+        <div className="min-w-full lg:h-[calc(100vh-272px-48px-40px)] flex flex-col bg-zinc-100 p-8 lg:px-24 lg:py-14">
           <p className="text-3xl mb-10">Why You Should Care to Register</p>
           <p className="text-2xl mb-2">As a Student of KGEC</p>
           <p className="mb-10 lg:text-lg">
