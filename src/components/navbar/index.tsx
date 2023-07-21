@@ -16,8 +16,8 @@ export const navItems = [
     path: "/scholarships",
   },
   {
-    name: "Digital Database",
-    path: "/digitaldb",
+    name: "Alumni Base",
+    path: "/alumnibase",
   },
 ];
 
