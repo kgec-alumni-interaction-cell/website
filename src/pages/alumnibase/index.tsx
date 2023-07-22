@@ -1,5 +1,4 @@
 import Layout from "@/components/layout";
-import { sign } from "crypto";
 import { useSession, signIn } from "next-auth/react";
 
 function AlumiBase() {
