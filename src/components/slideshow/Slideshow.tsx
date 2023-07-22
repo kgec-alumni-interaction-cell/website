@@ -23,7 +23,7 @@ function Slideshow({ children }: Props) {
     <div className="mx-0 my-auto overflow-hidden">
       <div
         ref={ref}
-        className="whitespace-nowrap transition"
+        className="whitespace-nowrap transition flex gap-0"
         style={{
           transform: `translate3d(${-index * slideWidth}px, 0, 0)`,
           transition: "ease 1000ms",
@@ -37,8 +37,8 @@ function Slideshow({ children }: Props) {
           {Children.map(children, (_, idx) => (
             <div
               key={idx}
-              className={`m-3 flex h-7 w-7 items-center justify-center rounded-full cursor-pointer bg-zinc-400 text-white ${
-                index === idx ? "h-10 w-10 text-lg" : ""
+              className={`m-3 flex items-center justify-center rounded-full cursor-pointer bg-zinc-600 text-white ${
+                index === idx ? "h-10 w-10 text-lg" : "h-7 w-7 "
               }`}
               onClick={() => {
                 setIndex(idx);

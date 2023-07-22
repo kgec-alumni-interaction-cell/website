@@ -21,46 +21,63 @@ export default function HomeHero() {
   const router = useRouter();
 
   return (
-    <section className="h-[calc(100vh-12px)] bg-zinc-100 min-w-full flex flex-col">
-      <div className="min-w-full flex lg:flex-row flex-col p-8 lg:p-24 pb-0 lg:pb-0 h-full">
-        <div className="w-full lg:w-[60%] flex flex-col gap-8 justify-center h-full">
-          <h3 className="text-[1.5rem] lg:text-[3rem] leading-[1.1] font-black">
+    <section className="h-[calc(100vh-12px)] hero bg-no-repeat bg-cover lg:bg-bottom min-w-full flex flex-col">
+      <div className="min-w-full flex lg:flex-row flex-col p-8 lg:p-24 pb-0 lg:pb-0 h-[95%]">
+        <div className="w-full flex flex-col justify-center lg:items-center h-full ">
+          <h3 className="text-[1rem] lg:text-[2rem] font-semibold leading-[1.1] m-0 text-zinc-100">
             Kalyani Government Engineering College
           </h3>
-          <h2 className="text-[3rem] lg:text-[4rem] leading-[1.1] font-black">
+          <h2 className="text-[2.5rem] lg:text-[4rem] leading-[1] font-black m-0 text-sky-100 my-2 lg:my-0">
             Alumni Association
           </h2>
-          <p className="text-lg">
+          <p className="text-lg mb-8 text-zinc-100">
             Building lifelong connections and friendships
           </p>
-          <div className="flex justify-around lg:justify-start lg:gap-24 mb-12">
-            <div className="flex flex-col gap-2">
-              <h2 className="font-bold text-3xl">{numBatches}</h2>
-              <p>batches</p>
+          <div className="flex justify-start gap-8 lg:gap-24 mb-8">
+            <div className="flex flex-col gap-2 justify-center items-center">
+              <h2 className="font-bold text-3xl text-zinc-50">{numBatches}</h2>
+              <p className="text-zinc-100">batches</p>
             </div>
-            <div className="flex flex-col gap-2">
-              <h2 className="font-bold text-3xl">
+            <div className="flex flex-col gap-2 justify-center items-center">
+              <h2 className="font-bold text-3xl text-zinc-50">
                 {formatDisplayNumber(numStudents)}+
               </h2>
-              <p>students</p>
+              <p className="text-zinc-100">students</p>
             </div>
-            <div className="flex flex-col gap-2">
-              <h2 className="font-bold text-3xl">
+            <div className="flex flex-col gap-2 justify-center items-center">
+              <h2 className="font-bold text-3xl text-zinc-50">
                 {formatDisplayNumber(numCompanies)}+
               </h2>
-              <p>companies</p>
+              <p className="text-zinc-100">companies</p>
             </div>
           </div>
+          <button
+            onClick={() => router.push("/alumnibase")}
+            className="bg-zinc-100 hover:bg-sky-100 duration-300 text-zinc-900 focus:ring-1 ring-zinc-50 lg:min-w-fit px-3 py-3 rounded-lg shadow-md flex justify-center items-center gap-2 max-w-max font-semibold group"
+          >
+            Visit the Alumni Base
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 256 256"
+              className="hidden group-hover:block duration-500"
+            >
+              <path
+                fill="currentColor"
+                d="m221.7 133.7l-72 72a8.2 8.2 0 0 1-11.4 0a8.1 8.1 0 0 1 0-11.4l58.4-58.3H40a8 8 0 0 1 0-16h156.7l-58.4-58.3a8.1 8.1 0 0 1 11.4-11.4l72 72a8.1 8.1 0 0 1 0 11.4Z"
+              />
+            </svg>
+          </button>
         </div>
-        <div className="w-full lg:w-[40%] hidden lg:block pb-24">
-          <img
-            src="/old_campus.jpg"
-            alt="hero image"
-            className="object-fill w-[900] h-[900] rounded-full border-zinc-900 border-[3px]"
-          />
-        </div>
+
+        {/* <img
+          src="/old_campus.jpg"
+          alt="hero image"
+          className="object-fill absolute top-0 left-0 right-0 -z-[10]"
+        /> */}
       </div>
-      <div className="bg-zinc-200 h-full flex flex-col gap-10 md:flex-row items-center justify-between lg:justify-around py-24">
+      {/* <div className="bg-zinc-300/50 h-[5%] flex flex-col gap-10 md:flex-row items-center justify-between lg:justify-around py-12">
         <div className="flex-grow lg:w-full lg:text-right lg:mr-48">
           <p className="text-2xl lg:text-3xl font-medium w-full">
             Are you a KGECian?
@@ -85,7 +102,7 @@ export default function HomeHero() {
             </span>
           </button>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

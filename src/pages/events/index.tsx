@@ -5,7 +5,7 @@ function Events() {
   return (
     <Layout>
       <section className=" bg-zinc-100 min-w-full flex flex-col">
-        <div className="min-w-full flex flex-col gap-8 p-12 lg:p-24 h-full">
+        <div className="min-w-full flex flex-col gap-8 p-12 px-8 lg:p-24 h-full">
           <div className="w-full justify-center">
             <h2 className="text-[3rem] lg:text-[4rem] font-black mb-0 leading-none">
               Events
