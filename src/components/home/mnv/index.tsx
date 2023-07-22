@@ -11,7 +11,7 @@ const points = [
 export default function HomeMNV() {
   return (
     <section className=" bg-zinc-100 min-w-full flex flex-col p-8 lg:p-24">
-      <p className="text-[2.5rem] mb-10 lg:mb-5">Mission & Vision</p>
+      <h2 className="text-[2rem] lg:text-[3rem] font-black mb-4 leading-none">Mission & Vision</h2>
 
       <div className="lg:hidden">
         <Slideshow>
@@ -28,10 +28,10 @@ export default function HomeMNV() {
       <ol className="hidden lg:flex text-lg flex-col gap-9">
         {points.map((point: string, idx) => (
           <div className="flex justify-center" key={idx}>
-            <div className="my-6 mr-12 h-[30px] w-[50px] p-2 py-3 flex items-center justify-center rounded-full bg-zinc-400 text-white">
+            <div className="my-6 mr-12 h-[30px] w-[50px] p-2 py-3 flex items-center justify-center rounded-full bg-zinc-600 text-white">
               {idx + 1}
             </div>
-            <li>{point}</li>
+            <p className="p-0">{point}</p>
           </div>
         ))}
       </ol>
