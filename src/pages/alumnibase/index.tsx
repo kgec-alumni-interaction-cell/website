@@ -71,7 +71,7 @@ function AlumiBase() {
                 </li>
               </ul>
               <button
-                onClick={() => signIn()}
+                onClick={() => signIn("linkedin")}
                 className="bg-zinc-50 hover:bg-100/50 duration-300 text-zinc-900 focus:ring-1 ring-zinc-50 lg:min-w-fit px-3 py-3 rounded-lg shadow-sm flex justify-center items-center gap-2 max-w-max font-semibold group"
               >
                 Register / Log In
