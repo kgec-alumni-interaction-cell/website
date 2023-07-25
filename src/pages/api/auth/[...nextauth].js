@@ -10,7 +10,12 @@ export const authOptions = {
   providers: [
     LinkedInProvider({
       clientId: process.env.LINKEDIN_CLIENT_ID,
-      clientSecret: process.env.LINKEDIN_CLIENT_SECRET
+      clientSecret: process.env.LINKEDIN_CLIENT_SECRET,
+      authorization: {
+        params: {
+          scope: "r_liteprofile r_emailaddress",
+        }
+      }
     })
   ]
 }
