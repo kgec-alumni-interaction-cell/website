@@ -1,6 +1,5 @@
 import { useRouter } from "next/router";
 
-
 export default function HomeAbout() {
   const router = useRouter();
 
@@ -18,6 +17,13 @@ export default function HomeAbout() {
         our time at KGEC. Our association aims to foster lifelong connections
         among alumni, promote professional growth, and contribute to the
         development of our beloved alma mater.
+      </p>
+
+      <p className="mt-3">
+        Our association is a beacon of unity and camaraderie, bringing together
+        graduates from diverse disciplines and generations. We take immense
+        pride in our shared experiences, accomplishments, and the values
+        instilled in us during our time at KGEC.
       </p>
 
       <button
