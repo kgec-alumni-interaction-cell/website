@@ -1,7 +1,42 @@
+import { useRouter } from "next/router";
+
+
 export default function HomeAbout() {
-    return (
-      <section className="h-[calc(100vh-12px)] bg-zinc-50 min-w-full flex flex-col">
-        <p>About Us</p>
-      </section>
-    );
-  }
+  const router = useRouter();
+
+  return (
+    <section className=" bg-zinc-50 min-w-full flex flex-col p-6 md:p-8 lg:p-24">
+      <h2 className="text-[2rem] lg:text-[3rem] font-black mb-4 leading-none">
+        Who are we?
+      </h2>
+
+      <p>
+        The Kalyani Government Engineering College Alumni Association is a
+        dynamic and thriving community of distinguished individuals who once
+        graced the halls of Kalyani Government Engineering College (KGEC). As
+        proud graduates, we are united by the shared experiences and memories of
+        our time at KGEC. Our association aims to foster lifelong connections
+        among alumni, promote professional growth, and contribute to the
+        development of our beloved alma mater.
+      </p>
+
+      <button
+        onClick={() => router.push("/about")}
+        className="mt-5 md:mt-7 bg-zinc-100 hover:bg-sky-100 duration-300 text-zinc-900 focus:ring-1 ring-zinc-50 lg:min-w-fit px-3 py-3 rounded-lg shadow-md flex justify-center items-center gap-2 max-w-max font-semibold group"
+      >
+        Learn More
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 256 256"
+        >
+          <path
+            fill="currentColor"
+            d="m221.7 133.7l-72 72a8.2 8.2 0 0 1-11.4 0a8.1 8.1 0 0 1 0-11.4l58.4-58.3H40a8 8 0 0 1 0-16h156.7l-58.4-58.3a8.1 8.1 0 0 1 11.4-11.4l72 72a8.1 8.1 0 0 1 0 11.4Z"
+          />
+        </svg>
+      </button>
+    </section>
+  );
+}
