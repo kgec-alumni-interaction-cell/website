@@ -132,7 +132,10 @@ function Events() {
             <h2 className="font-semibold text-lg">Upcoming Events</h2>
             <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4">
               {upcomingEvents.map((event, idx) => (
-                <div className="flex flex-col bg-zinc-100 shadow-sm rounded-lg h-[350px]">
+                <div
+                  key={idx}
+                  className="flex flex-col bg-zinc-100 shadow-sm rounded-lg h-[350px]"
+                >
                   <img
                     src={event.image}
                     alt="event image"
@@ -168,7 +171,10 @@ function Events() {
             <h2 className="font-semibold text-lg">Past Events</h2>
             <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4">
               {pastEvents.map((event, idx) => (
-                <div className="flex flex-col bg-zinc-100 shadow-sm rounded-lg h-[350px]">
+                <div
+                  key={idx}
+                  className="flex flex-col bg-zinc-100 shadow-sm rounded-lg h-[350px]"
+                >
                   <img
                     src={event.image}
                     alt="event image"
