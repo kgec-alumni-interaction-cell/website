@@ -69,7 +69,16 @@ function Slideshow({ children, slideTime }: Props) {
           }}
           className="w-full bg-zinc-200 ml-10 md:ml-24 mr-3 mb-10 rounded-lg py-1.5 md:py-3 mx-auto hover:bg-sky-100 duration-300 text-zinc-900 focus:ring-1 ring-zinc-50 lg:min-w-fit px-3 shadow-md flex justify-center items-center gap-2 font-semibold group"
         >
-          Left
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-6 md:w-8 h-6 md:h-8"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="currentColor"
+              d="m10 18l-6-6l6-6l1.4 1.45L7.85 11H20v2H7.85l3.55 3.55L10 18Z"
+            />
+          </svg>
         </button>
         <button
           onClick={() => {
@@ -79,7 +88,16 @@ function Slideshow({ children, slideTime }: Props) {
           }}
           className="w-full bg-zinc-200 mr-10 md:mr-24 ml-3 mb-10 rounded-lg py-1.5 md:py-3 mx-auto hover:bg-sky-100 duration-300 text-zinc-900 focus:ring-1 ring-zinc-50 lg:min-w-fit px-3 shadow-md flex justify-center items-center gap-2 font-semibold group"
         >
-          Right
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-6 md:w-8 h-6 md:h-8"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="currentColor"
+              d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6l-6 6Z"
+            />
+          </svg>
         </button>
       </div>
     </>
