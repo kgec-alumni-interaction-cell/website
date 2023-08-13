@@ -1,15 +1,38 @@
 import Layout from "@/components/layout";
 import Slide from "@/components/slideshow/Slide";
 import Slideshow from "@/components/slideshow/Slideshow";
+import { useEffect, useState } from "react";
 
-const points = [
-  "Kalyani Government Engineering College (KGEC) in West Bengal was established in 1995 and is affiliated with Maulana Abul Kalam Azad University of Technology, Kolkata. It is renowned as one of the top engineering colleges in the country, offering B.Tech, M.Tech, and MCA courses across ten academic departments.",
-  "KGEC fosters a thriving community of eager learners, emphasizing both academic and personal growth. The college's outcome-based education approach puts students at the center of the learning process. The campus spans 75 acres and features state-of-the-art infrastructure, including seminar halls, E-classrooms, and a well-equipped library.",
-  "The college encourages industry-academia interaction through workshops, guest lectures, and industrial visits. KGEC boasts robust placement opportunities, with top-notch companies recruiting final year students annually. Students actively participate in coding competitions, hackathons, and events organized by various clubs, including the Entrepreneurship Cell.",
-  "Faculty members are involved in research activities and mentor PhD students. The college takes pride in its national-level journal, 'REASON-A Technical Journal.' Preparations for NAAC Accreditation are underway, as KGEC strives for excellence in education, research, and overall growth, empowering students to shine in the world of engineering.",
+interface Scholarship {
+  name: string;
+  description: string;
+  link: string;
+}
+
+const scholarships: Scholarship[] = [
+  {
+    name: "IIT KGP free B.Tech CSE",
+    description:
+      "This is not a real scholarship, obviously. It's just a sample scholarship. Nothing else. Obviously.",
+    link: "#",
+  },
+  {
+    name: "Google Scholarship",
+    description:
+      "There are three required fields: a name, a description and a link. These three fields make up this scholarships card. Try to keep the description between 70-110 words. Having too many words makes these cards uneven and stuff so it's better to not do that.",
+    link: "#",
+  },
+  {
+    name: "Bing Chilling Scholarship",
+    description:
+      "For now, this stuff is just a hardcoded array of objects. Ideally, it should be retrieved from a CMS.",
+    link: "#",
+  },
 ];
 
 function Scholarships() {
+
+
   return (
     <Layout>
       <section className=" bg-zinc-100 min-w-full flex flex-col">
@@ -36,11 +59,27 @@ function Scholarships() {
           </div>
         </div>
 
-        <Slideshow>
-          {points.map((point: string, idx) => (
+        <Slideshow slideTime={10000}>
+          {scholarships.map((scholarship: Scholarship, idx) => (
             <Slide key={idx}>
-              <div className="flex h-full w-[80vw] bg-zinc-50 mx-auto whitespace-normal">
-                <p className="text-md">{point}</p>
+              <div className="border-2 h-[430px] md:h-[500px] rounded-xl flex flex-col w-[70vw] bg-zinc-50 mx-auto p-4 px-5 whitespace-normal">
+                <h1 className="text-3xl mx-auto mt-2">{scholarship.name}</h1>
+                <p className="my-5 md:px-3">{scholarship.description}</p>
+                <button className="bg-zinc-100 mx-auto my-3 mt-auto hover:bg-sky-100 duration-300 text-zinc-900 focus:ring-1 ring-zinc-50 lg:min-w-fit px-3 py-3 rounded-lg shadow-md flex justify-center items-center gap-2 max-w-max font-semibold group">
+                  Learn More
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 256 256"
+                    className="duration-500"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="m221.7 133.7l-72 72a8.2 8.2 0 0 1-11.4 0a8.1 8.1 0 0 1 0-11.4l58.4-58.3H40a8 8 0 0 1 0-16h156.7l-58.4-58.3a8.1 8.1 0 0 1 11.4-11.4l72 72a8.1 8.1 0 0 1 0 11.4Z"
+                    />
+                  </svg>
+                </button>
               </div>
             </Slide>
           ))}
