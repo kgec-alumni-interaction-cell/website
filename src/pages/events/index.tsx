@@ -1,7 +1,80 @@
 /* eslint-disable @next/next/no-img-element */
 import Layout from "@/components/layout";
+import { useRouter } from "next/router";
+import { useState } from "react";
 
 function Events() {
+  const [ongoingEvents, setOngoingEvents] = useState([
+    {
+      name: "Bing Chlling",
+      description: "Come and chill with bing.",
+      image: "https://kgec.edu.in/web/assets/images/event1.jpg",
+      link: "#",
+    },
+    {
+      name: "Bing Chlling",
+      description:
+        "Every even should have four data points: a name, a description, an image and a link.",
+      image: "https://kgec.edu.in/web/assets/images/event2.jpg",
+      link: "#",
+    },
+    {
+      name: "Bing Chlling",
+      description:
+        "All these events are stored as a state variable, which will be updated via the CMS.",
+      image: "https://kgec.edu.in/web/assets/images/seminar1.PNG",
+      link: "#",
+    },
+  ]);
+
+  const [upcomingEvents, setUpcomingEvents] = useState([
+    {
+      name: "Bing Chlling",
+      description:
+        "These are just weird sample events. I hardcoded them. Will be replaced.",
+      image: "https://kgec.edu.in/web/assets/images/event1.jpg",
+      link: "#",
+    },
+    {
+      name: "Bing Chlling",
+      description: "Don't show provide more than 3 of these. Please I beg.",
+      image: "https://kgec.edu.in/web/assets/images/event2.jpg",
+      link: "#",
+    },
+    {
+      name: "Bing Chlling",
+      description: "Still reading? Dang I didn't peg you for a reader.",
+      image: "https://kgec.edu.in/web/assets/images/seminar1.PNG",
+      link: "#",
+    },
+  ]);
+
+  const [pastEvents, setPastEvents] = useState([
+    {
+      name: "Bing Chlling",
+      description:
+        "Let's talk about the images. They can basically be any size, but try to make it fit into this little cropped area that yopu can see on top.",
+      image: "https://kgec.edu.in/web/assets/images/event1.jpg",
+      link: "#",
+    },
+    {
+      name: "Bing Chlling",
+      description:
+        "Every even should have four data points: a name, a description, an image and a link.",
+      image: "https://kgec.edu.in/web/assets/images/event2.jpg",
+      link: "#",
+    },
+    {
+      name: "Bing Chlling",
+      description:
+        "Oh and one last thing, try not to make the descriptions of each of these events too big, otherwise it will be difficult to render the writing into this small space as you can clearly see. Make it EXACTLY the size of this piece of text.",
+      image: "https://kgec.edu.in/web/assets/images/seminar1.PNG",
+      link: "#",
+    },
+  ]);
+
+  const router = useRouter();
+
   return (
     <Layout>
       <section className=" bg-zinc-100 min-w-full flex flex-col">
@@ -19,43 +92,118 @@ function Events() {
           <div className="flex flex-col bg-zinc-200 shadow-sm rounded-lg w-full h-1/3 p-4 gap-4">
             <h2 className="font-semibold text-lg">Ongoing Events</h2>
             <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4">
-              <div className="flex flex-col bg-zinc-100 shadow-sm rounded-lg h-[200px] p-4">
-                <p>event</p>
-              </div>
-              <div className="flex flex-col bg-zinc-100 shadow-sm rounded-lg h-[200px] p-4">
-                <p>event</p>
-              </div>
-              <div className="flex flex-col bg-zinc-100 shadow-sm rounded-lg h-[200px] p-4">
-                <p>event</p>
-              </div>
+              {ongoingEvents.map((event, idx) => (
+                <div
+                  key={idx}
+                  className="flex flex-col bg-zinc-100 shadow-sm rounded-lg h-[350px]"
+                >
+                  <img
+                    src={event.image}
+                    alt="event image"
+                    className="rounded-t-lg object-cover h-24"
+                  />
+                  <h1 className="px-4 py-2 text-xl font-bold mx-auto">
+                    {event.name}
+                  </h1>
+                  <p className="p-4">{event.description}</p>
+                  <button
+                    onClick={() => router.push(event.link)}
+                    className="bg-zinc-100 mx-auto my-3 mt-auto hover:bg-sky-100 duration-300 text-zinc-900 focus:ring-1 ring-zinc-50 lg:min-w-fit px-3 py-3 rounded-lg shadow-md flex justify-center items-center gap-2 max-w-max font-semibold group"
+                  >
+                    Learn More
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 256 256"
+                      className="duration-500"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="m221.7 133.7l-72 72a8.2 8.2 0 0 1-11.4 0a8.1 8.1 0 0 1 0-11.4l58.4-58.3H40a8 8 0 0 1 0-16h156.7l-58.4-58.3a8.1 8.1 0 0 1 11.4-11.4l72 72a8.1 8.1 0 0 1 0 11.4Z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              ))}
             </div>
           </div>
           <div className="flex flex-col bg-zinc-200  shadow-sm rounded-lg w-full h-1/3 p-4 gap-4">
             <h2 className="font-semibold text-lg">Upcoming Events</h2>
             <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4">
-              <div className="flex flex-col bg-zinc-100 shadow-sm rounded-lg h-[200px] p-4">
-                <p>event</p>
-              </div>
-              <div className="flex flex-col bg-zinc-100 shadow-sm rounded-lg h-[200px] p-4">
-                <p>event</p>
-              </div>
-              <div className="flex flex-col bg-zinc-100 shadow-sm rounded-lg h-[200px] p-4">
-                <p>event</p>
-              </div>
+              {upcomingEvents.map((event, idx) => (
+                <div
+                  key={idx}
+                  className="flex flex-col bg-zinc-100 shadow-sm rounded-lg h-[350px]"
+                >
+                  <img
+                    src={event.image}
+                    alt="event image"
+                    className="rounded-t-lg object-cover h-24"
+                  />
+                  <h1 className="px-4 py-2 text-xl font-bold mx-auto">
+                    {event.name}
+                  </h1>
+                  <p className="p-4">{event.description}</p>
+                  <button
+                    onClick={() => router.push(event.link)}
+                    className="bg-zinc-100 mx-auto my-3 mt-auto hover:bg-sky-100 duration-300 text-zinc-900 focus:ring-1 ring-zinc-50 lg:min-w-fit px-3 py-3 rounded-lg shadow-md flex justify-center items-center gap-2 max-w-max font-semibold group"
+                  >
+                    Learn More
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 256 256"
+                      className="duration-500"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="m221.7 133.7l-72 72a8.2 8.2 0 0 1-11.4 0a8.1 8.1 0 0 1 0-11.4l58.4-58.3H40a8 8 0 0 1 0-16h156.7l-58.4-58.3a8.1 8.1 0 0 1 11.4-11.4l72 72a8.1 8.1 0 0 1 0 11.4Z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              ))}
             </div>
           </div>
           <div className="flex flex-col bg-zinc-200 shadow-sm rounded-lg w-full h-1/3 p-4 gap-4">
             <h2 className="font-semibold text-lg">Past Events</h2>
             <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4">
-              <div className="flex flex-col bg-zinc-100 shadow-sm rounded-lg h-[200px] p-4">
-                <p>event</p>
-              </div>
-              <div className="flex flex-col bg-zinc-100 shadow-sm rounded-lg h-[200px] p-4">
-                <p>event</p>
-              </div>
-              <div className="flex flex-col bg-zinc-100 shadow-sm rounded-lg h-[200px] p-4">
-                <p>event</p>
-              </div>
+              {pastEvents.map((event, idx) => (
+                <div
+                  key={idx}
+                  className="flex flex-col bg-zinc-100 shadow-sm rounded-lg h-[350px]"
+                >
+                  <img
+                    src={event.image}
+                    alt="event image"
+                    className="rounded-t-lg object-cover h-24"
+                  />
+                  <h1 className="px-4 py-2 text-xl font-bold mx-auto">
+                    {event.name}
+                  </h1>
+                  <p className="p-4">{event.description}</p>
+                  <button
+                    onClick={() => router.push(event.link)}
+                    className="bg-zinc-100 mx-auto my-3 mt-auto hover:bg-sky-100 duration-300 text-zinc-900 focus:ring-1 ring-zinc-50 lg:min-w-fit px-3 py-3 rounded-lg shadow-md flex justify-center items-center gap-2 max-w-max font-semibold group"
+                  >
+                    Learn More
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 256 256"
+                      className="duration-500"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="m221.7 133.7l-72 72a8.2 8.2 0 0 1-11.4 0a8.1 8.1 0 0 1 0-11.4l58.4-58.3H40a8 8 0 0 1 0-16h156.7l-58.4-58.3a8.1 8.1 0 0 1 11.4-11.4l72 72a8.1 8.1 0 0 1 0 11.4Z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              ))}
             </div>
           </div>
         </div>
