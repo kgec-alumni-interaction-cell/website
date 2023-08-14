@@ -145,12 +145,12 @@ function About() {
             </div>
           )}
         </div>
-        <div className="w-[25%] flex-col h-full divide-y sticky top-0 hidden lg:flex">
+        <div className="w-[25%] flex-col h-full divide-y sticky top-24 hidden lg:flex">
           {sidebarItems.map((item, index) => (
             <div
               key={index}
               className={`w-full h-12 flex items-center justify-start cursor-pointer p-2 rounded-lg ${
-                curentSidebarItem === index ? "bg-zinc-200" : ""
+                curentSidebarItem === index ? "bg-indigo-300" : ""
               }`}
               onClick={() => setCurrentSidebarItem(index)}
             >
@@ -174,7 +174,7 @@ function MobileDropDown({ onSelect }: { onSelect: (index: number) => void }) {
   };
 
   return (
-    <div className="w-full flex flex-col lg:hidden items-center justify-center bg-zinc-200 rounded-lg p-2">
+    <div className="w-full flex flex-col lg:hidden items-center justify-center bg-indigo-300 rounded-lg p-2">
       <div
         className="w-full flex items-center justify-between cursor-pointer"
         onClick={() => setIsOpen(!isOpen)}

@@ -1,7 +1,6 @@
 import Layout from "@/components/layout";
 import Slide from "@/components/slideshow/Slide";
 import Slideshow from "@/components/slideshow/Slideshow";
-import { useEffect, useState } from "react";
 
 interface Scholarship {
   name: string;
@@ -41,13 +40,13 @@ function Scholarships() {
             <h2 className="text-[3rem] lg:text-[4rem] font-black mb-0 leading-none">
               Scholarships
             </h2>
-            <p className="text-base mt-2">
+            <p className="text-lg mt-2">
               The Alumni Cell of Kalyani Government Engineering College proudly
               presents its scholarship schemes, dedicated to nurturing young
               talents who possess exceptional skills but face financial
               constraints.
             </p>
-            <p className="text-base mt-5">
+            <p className="text-lg mt-5">
               Our mission is to provide equal opportunities to deserving
               students, enabling them to pursue their academic dreams without
               burden. We envision a future where no promising mind is held back
@@ -62,10 +61,12 @@ function Scholarships() {
         <Slideshow slideTime={10000}>
           {scholarships.map((scholarship: Scholarship, idx) => (
             <Slide key={idx}>
-              <div className="border-2 h-[430px] md:h-[500px] rounded-xl flex flex-col w-[70vw] bg-zinc-50 mx-auto p-4 px-5 whitespace-normal">
-                <h1 className="text-3xl mx-auto mt-2">{scholarship.name}</h1>
-                <p className="my-5 md:px-3">{scholarship.description}</p>
-                <button className="bg-zinc-100 mx-auto my-3 mt-auto hover:bg-sky-100 duration-300 text-zinc-900 focus:ring-1 ring-zinc-50 lg:min-w-fit px-3 py-3 rounded-lg shadow-md flex justify-center items-center gap-2 max-w-max font-semibold group">
+              <div className="border-2 h-[430px] md:h-[500px] rounded-xl flex flex-col justify-evenly w-[70vw] bg-zinc-50 mx-auto p-4 whitespace-normal items-start">
+                <div className="flex flex-col gap-4">
+                <h1 className="text-3xl font-bold">{scholarship.name}</h1>
+                <p className="">{scholarship.description}</p>
+                </div>
+                <button className="bg-indigo-200 hover:bg-indigo-300 duration-300 text-zinc-900 focus:ring-1 ring-indigo-50 lg:min-w-fit px-3 py-3 rounded-lg shadow-md flex justify-center items-center gap-2 max-w-max font-semibold mt-8">
                   Learn More
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

@@ -27,7 +27,7 @@ export default function HomeHero() {
           <h3 className="text-[1rem] lg:text-[2rem] font-semibold leading-[1.1] m-0 text-zinc-100">
             Kalyani Government Engineering College
           </h3>
-          <h2 className="text-[2.5rem] lg:text-[4rem] leading-[1] font-black m-0 text-sky-100 my-2 lg:my-0">
+          <h2 className="text-[2.5rem] lg:text-[4rem] leading-[1] font-black m-0 text-indigo-300 my-2 lg:my-0">
             Alumni Association
           </h2>
           <p className="text-lg mb-8 text-zinc-100">
@@ -53,7 +53,7 @@ export default function HomeHero() {
           </div>
           <button
             onClick={() => router.push("/alumnibase")}
-            className="bg-zinc-100 hover:bg-sky-100 duration-300 text-zinc-900 focus:ring-1 ring-zinc-50 lg:min-w-fit px-3 py-3 rounded-lg shadow-md flex justify-center items-center gap-2 max-w-max font-semibold group"
+            className="bg-indigo-200 hover:bg-indigo-300 duration-300 text-zinc-900 focus:ring-1 ring-indigo-50 lg:min-w-fit px-3 py-3 rounded-lg shadow-md flex justify-center items-center gap-2 max-w-max font-semibold group"
           >
             Visit the Alumni Base
             <svg
@@ -61,7 +61,7 @@ export default function HomeHero() {
               width="16"
               height="16"
               viewBox="0 0 256 256"
-              className="hidden group-hover:block duration-500"
+              className="duration-500"
             >
               <path
                 fill="currentColor"

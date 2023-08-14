@@ -16,22 +16,13 @@ function Slideshow({ children, slideTime }: Props) {
     }
   }, []);
 
-  // let slideshowTimeout: NodeJS.Timeout;
-
-  useEffect(() => {
-    setTimeout(() => {
-      setIndex((prev) =>
-        prev === Children.count(children) - 1 ? 0 : prev + 1
-      );
-    }, slideTime);
-  }, [index]);
 
   return (
     <>
-      <div className="mx-0 my-auto h-full overflow-hidden">
+      <div className="mx-0 my-auto h-full overflow-hidden relative">
         <div
           ref={ref}
-          className="whitespace-nowrap transition flex gap-0"
+          className="whitespace-nowrap transition flex gap-0 left-0"
           style={{
             transform: `translate3d(${-index * slideWidth}px, 0, 0)`,
             transition: "ease 1000ms",
@@ -39,6 +30,44 @@ function Slideshow({ children, slideTime }: Props) {
         >
           {children}
         </div>
+        <button
+          onClick={() => {
+            setIndex((prev) =>
+              prev === 0 ? Children.count(children) - 1 : prev - 1
+            );
+          }}
+          className="rounded-full p-4 bg-zinc-300 absolute top-1/2 left-20"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-6 md:w-8 h-6 md:h-8"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="currentColor"
+              d="m10 18l-6-6l6-6l1.4 1.45L7.85 11H20v2H7.85l3.55 3.55L10 18Z"
+            />
+          </svg>
+        </button>
+        <button
+          onClick={() => {
+            setIndex((prev) =>
+              prev === Children.count(children) - 1 ? 0 : prev + 1
+            );
+          }}
+          className="rounded-full p-4 bg-zinc-300 absolute top-1/2 right-20"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-6 md:w-8 h-6 md:h-8"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="currentColor"
+              d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6l-6 6Z"
+            />
+          </svg>
+        </button>
         <div className="text-center flex flex-col flex-grow mt-1"></div>
       </div>
 
@@ -58,47 +87,6 @@ function Slideshow({ children, slideTime }: Props) {
             </svg>
           ))}
         </div>
-      </div>
-
-      <div className="flex">
-        <button
-          onClick={() => {
-            setIndex((prev) =>
-              prev === 0 ? Children.count(children) - 1 : prev - 1
-            );
-          }}
-          className="w-full bg-zinc-200 ml-10 md:ml-24 mr-3 mb-10 rounded-lg py-1.5 md:py-3 mx-auto hover:bg-sky-100 duration-300 text-zinc-900 focus:ring-1 ring-zinc-50 lg:min-w-fit px-3 shadow-md flex justify-center items-center gap-2 font-semibold group"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-6 md:w-8 h-6 md:h-8"
-            viewBox="0 0 24 24"
-          >
-            <path
-              fill="currentColor"
-              d="m10 18l-6-6l6-6l1.4 1.45L7.85 11H20v2H7.85l3.55 3.55L10 18Z"
-            />
-          </svg>
-        </button>
-        <button
-          onClick={() => {
-            setIndex((prev) =>
-              prev === Children.count(children) - 1 ? 0 : prev + 1
-            );
-          }}
-          className="w-full bg-zinc-200 mr-10 md:mr-24 ml-3 mb-10 rounded-lg py-1.5 md:py-3 mx-auto hover:bg-sky-100 duration-300 text-zinc-900 focus:ring-1 ring-zinc-50 lg:min-w-fit px-3 shadow-md flex justify-center items-center gap-2 font-semibold group"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-6 md:w-8 h-6 md:h-8"
-            viewBox="0 0 24 24"
-          >
-            <path
-              fill="currentColor"
-              d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6l-6 6Z"
-            />
-          </svg>
-        </button>
       </div>
     </>
   );
