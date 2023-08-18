@@ -3,6 +3,7 @@ import HomeAbout from "@/components/home/about";
 import HomeMNV from "@/components/home/mnv";
 import HomeContact from "@/components/home/contact";
 import Layout from "@/components/layout";
+import HomeNotices from "@/components/home/notices";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <HomeHero />
       <HomeAbout />
       <HomeMNV />
+      <HomeNotices />
       <HomeContact />
     </Layout>
   );
