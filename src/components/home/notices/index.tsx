@@ -22,7 +22,7 @@ export default function HomeNotices() {
 
       <ul className="list-inside flex-col">
         {notices.map((notice, idx) => (
-          <li className="flex my-3">
+          <li key={idx} className="flex my-3">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
