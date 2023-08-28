@@ -31,7 +31,7 @@ function About() {
         <div className="w-full lg:w-[75%] ">
           {curentSidebarItem === 0 && (
             <div className="rounded-lg p-2">
-              <h2 className="text-2xl lg:text-3xl font-black mb-2">About Us</h2>
+              <h2 className="text-[3rem] lg:text-[4rem] font-black mb-2">About Us</h2>
               Our association is a beacon of unity and camaraderie, bringing
               together graduates from diverse disciplines and generations. We
               take immense pride in our shared experiences, accomplishments, and

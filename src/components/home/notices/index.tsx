@@ -15,14 +15,14 @@ const notices = [
 
 export default function HomeNotices() {
   return (
-    <section className="mnv bg-zinc-50 min-w-full flex flex-col p-6 md:p-8 lg:p-24  ">
+    <section className="mnv bg-zinc-50 min-w-full flex flex-col p-6 md:p-8 lg:p-24 h-100 md:h-[calc(100vh-12px)]">
       <h2 className="text-[2rem] lg:text-[3rem] font-black mb-4 leading-none">
         Notice Board
       </h2>
 
       <ul className="list-inside flex-col">
         {notices.map((notice, idx) => (
-          <li key={idx} className="flex my-3">
+          <li key={idx} className="flex my-3 ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
