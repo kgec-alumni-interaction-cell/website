@@ -39,7 +39,7 @@ export default function Navbar() {
             href={item.path}
             key={item.name}
             className={`p-2 rounded-lg ${
-              router.pathname === item.path ? "bg-indigo-300/90 font-semibold" : ""
+              router.pathname === item.path ? "bg-[#f7c212]/80 font-semibold" : ""
             } cursor-pointer mx-2`}
           >
             {item.name}

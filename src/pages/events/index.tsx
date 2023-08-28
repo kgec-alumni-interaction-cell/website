@@ -77,20 +77,20 @@ function Events() {
 
   return (
     <Layout>
-      <section className=" bg-zinc-100 min-w-full flex flex-col">
+      <section className="  bg-[#2d4698] min-w-full flex flex-col">
         <div className="min-w-full flex flex-col gap-8 p-12 px-8 lg:p-24 h-full">
           <div className="w-full justify-center">
-            <h2 className="text-[3rem] lg:text-[4rem] font-black mb-0 leading-none">
+            <h2 className="text-[3rem] lg:text-[4rem] font-black mb-0 leading-none text-zinc-100">
               Events
             </h2>
-            <p className="text-lg">
+            <p className="text-lg text-zinc-100">
               Details about upcoming, ongoing and past events from the KGEC
               Alumni Association.
             </p>
           </div>
           {/* eveyrthing will be done using map function, this is just a prototype */}
-          <div className="flex flex-col bg-indigo-300/40 shadow-sm rounded-lg w-full h-1/3 p-4 gap-4">
-            <h2 className="font-semibold text-xl">Ongoing Events</h2>
+          <div className="flex flex-col bg-[#000616]/50 shadow-sm rounded-lg w-full h-1/3 p-4 gap-4">
+            <h2 className="font-semibold text-xl text-zinc-100">Ongoing Events</h2>
             <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4">
               {ongoingEvents.map((event, idx) => (
                 <div
@@ -130,8 +130,8 @@ function Events() {
               ))}
             </div>
           </div>
-          <div className="flex flex-col bg-indigo-300/40  shadow-sm rounded-lg w-full h-1/3 p-4 gap-4">
-            <h2 className="font-semibold text-xl">Upcoming Events</h2>
+          <div className="flex flex-col bg-[#000616]/50  shadow-sm rounded-lg w-full h-1/3 p-4 gap-4">
+            <h2 className="font-semibold text-xl text-zinc-100">Upcoming Events</h2>
             <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4">
               {upcomingEvents.map((event, idx) => (
                 <div
@@ -171,8 +171,8 @@ function Events() {
               ))}
             </div>
           </div>
-          <div className="flex flex-col bg-indigo-300/40 shadow-sm rounded-lg w-full h-1/3 p-4 gap-4">
-            <h2 className="font-semibold text-xl">Past Events</h2>
+          <div className="flex flex-col bg-[#000616]/50 shadow-sm rounded-lg w-full h-1/3 p-4 gap-4">
+            <h2 className="font-semibold text-xl text-zinc-100">Past Events</h2>
             <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4">
               {pastEvents.map((event, idx) => (
                 <div

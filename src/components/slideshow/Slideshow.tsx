@@ -36,7 +36,7 @@ function Slideshow({ children, slideTime }: Props) {
               prev === 0 ? Children.count(children) - 1 : prev - 1
             );
           }}
-          className="rounded-full p-4 bg-zinc-300 absolute top-1/2 left-20"
+          className="rounded-full p-4 bg-zinc-300 absolute top-1/2 left-2 md:left-20"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +55,7 @@ function Slideshow({ children, slideTime }: Props) {
               prev === Children.count(children) - 1 ? 0 : prev + 1
             );
           }}
-          className="rounded-full p-4 bg-zinc-300 absolute top-1/2 right-20"
+          className="rounded-full p-4 bg-zinc-300 absolute top-1/2 right-2 md:right-20"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
