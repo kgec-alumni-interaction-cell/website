@@ -33,7 +33,7 @@ function Layout({ children }: Props) {
 
         <title>KGEC Alumni Association Website</title>
       </Head>
-      <main className="min-h-screen min-w-screen flex flex-col">
+      <main className="min-h-screen min-w-screen flex flex-col ">
         <Navbar />
         {children}
         <Footer />

@@ -4,12 +4,12 @@ export default function HomeAbout() {
   const router = useRouter();
 
   return (
-    <section className=" bg-zinc-50 min-w-full flex flex-col p-6 md:p-8 lg:p-24">
-      <h2 className="text-[2rem] lg:text-[3rem] font-black mb-4 leading-none">
+    <section className="h-[calc(100vh-12px)] about min-w-full flex flex-col p-6 md:p-8 lg:p-24 realtive bg-[#2d4698]">
+      <h2 className="text-[2rem] lg:text-[3rem] font-black text-zinc-50 mb-4 leading-none">
         Who are we?
       </h2>
 
-      <p>
+      <p className="text-lg text-zinc-50">
         The Kalyani Government Engineering College Alumni Association is a
         dynamic and thriving community of distinguished individuals who once
         graced the halls of Kalyani Government Engineering College (KGEC). As
@@ -19,7 +19,7 @@ export default function HomeAbout() {
         development of our beloved alma mater.
       </p>
 
-      <p className="mt-3">
+      <p className="mt-3 text-lg text-zinc-50">
         Our association is a beacon of unity and camaraderie, bringing together
         graduates from diverse disciplines and generations. We take immense
         pride in our shared experiences, accomplishments, and the values
@@ -28,7 +28,7 @@ export default function HomeAbout() {
 
       <button
         onClick={() => router.push("/about")}
-        className="mt-5 md:mt-7 bg-zinc-100 hover:bg-sky-100 duration-300 text-zinc-900 focus:ring-1 ring-zinc-50 lg:min-w-fit px-3 py-3 rounded-lg shadow-md flex justify-center items-center gap-2 max-w-max font-semibold group"
+        className="bg-[#f7c212]/80 hover:bg-[#f7c212] duration-300 text-zinc-900 focus:ring-1 ring-indigo-50 lg:min-w-fit px-3 py-3 rounded-lg shadow-md flex justify-center items-center gap-2 max-w-max font-semibold mt-8 tetx-lg"
       >
         Learn More
         <svg

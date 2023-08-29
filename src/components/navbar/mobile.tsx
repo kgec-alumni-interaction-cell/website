@@ -11,7 +11,7 @@ export default function MobileMenu() {
     <div className="lg:hidden ">
       <div className="flex justify-between items-center relative">
         <button
-          className="text-2xl bg-zinc-200 p-2 rounded-lg"
+          className="text-2xl bg-[#f7c212]/90 hover:bg-[#f7c212] p-2 rounded-lg"
           onClick={() => setIsOpen((prev) => !prev)}
         >
           {isOpen ? (
@@ -40,14 +40,14 @@ export default function MobileMenu() {
         </button>
       </div>
       {isOpen && (
-        <div className="flex flex-col absolute top-12 right-12 bg-zinc-200 p-2 rounded-lg">
+        <div className="flex flex-col absolute top-12 right-12 bg-[#f7c212] p-2 rounded-lg">
           {navItems.map((item) => (
             <Link
               href={item.path}
               key={item.name}
               className={`${
-                router.pathname === item.path ? "bg-zinc-300" : ""
-              }hover:bg-zinc-300 rounded-lg p-2`}
+                router.pathname === item.path ? "bg-[#f2f633]" : ""
+              }bg-[#f7c212] hover:bg-[#f3f712] rounded-lg p-2`}
             >
               {item.name}
             </Link>
