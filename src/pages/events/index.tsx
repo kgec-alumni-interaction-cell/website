@@ -77,10 +77,10 @@ function Events() {
 
   return (
     <Layout>
-      <section className="  bg-[#2d4698] min-w-full flex flex-col">
+      <section className="bg-gradient-to-b from-violet-500 via-indigo-500 to-indigo-600 min-w-full flex flex-col">
         <div className="min-w-full flex flex-col gap-8 p-12 px-8 lg:p-24 h-full">
           <div className="w-full justify-center">
-            <h2 className="text-[3rem] lg:text-[4rem] font-black mb-0 leading-none text-zinc-100">
+            <h2 className="text-[2.5rem] lg:text-[3rem] font-black mb-0 leading-none text-yellow-300">
               Events
             </h2>
             <p className="text-lg text-zinc-100">
@@ -89,8 +89,8 @@ function Events() {
             </p>
           </div>
           {/* eveyrthing will be done using map function, this is just a prototype */}
-          <div className="flex flex-col bg-[#000616]/50 shadow-sm rounded-lg w-full h-1/3 p-4 gap-4">
-            <h2 className="font-semibold text-xl text-zinc-100">Ongoing Events</h2>
+          <div className="flex flex-col bg-indigo-900/40 shadow-sm rounded-lg w-full h-1/3 p-4 gap-4">
+            <h2 className="font-semibold text-2xl text-yellow-300">Ongoing Events</h2>
             <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4">
               {ongoingEvents.map((event, idx) => (
                 <div
@@ -130,8 +130,8 @@ function Events() {
               ))}
             </div>
           </div>
-          <div className="flex flex-col bg-[#000616]/50  shadow-sm rounded-lg w-full h-1/3 p-4 gap-4">
-            <h2 className="font-semibold text-xl text-zinc-100">Upcoming Events</h2>
+          <div className="flex flex-col bg-indigo-900/40  shadow-sm rounded-lg w-full h-1/3 p-4 gap-4">
+            <h2 className="font-semibold text-2xl text-yellow-300">Upcoming Events</h2>
             <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4">
               {upcomingEvents.map((event, idx) => (
                 <div
@@ -171,8 +171,8 @@ function Events() {
               ))}
             </div>
           </div>
-          <div className="flex flex-col bg-[#000616]/50 shadow-sm rounded-lg w-full h-1/3 p-4 gap-4">
-            <h2 className="font-semibold text-xl text-zinc-100">Past Events</h2>
+          <div className="flex flex-col bg-indigo-900/40 shadow-sm rounded-lg w-full h-1/3 p-4 gap-4">
+            <h2 className="font-semibold text-2xl text-yellow-300">Past Events</h2>
             <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4">
               {pastEvents.map((event, idx) => (
                 <div

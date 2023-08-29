@@ -8,22 +8,22 @@ function AlumiBase() {
   if (!session)
     return (
       <Layout>
-        <section className=" bg-[#2d4698] md:h-[calc(100vh-230px)] min-w-full flex flex-col">
+        <section className="bg-gradient-to-b from-violet-500 via-indigo-500 to-indigo-600 min-h-screen min-w-full flex flex-col">
           <div className="min-w-full flex flex-col gap-8 p-12 px-8 lg:p-24 h-full">
             <div className="w-full justify-center">
-              <h2 className="text-[3rem] text-zinc-50 lg:text-[4rem] font-black mb-0 leading-none">
+              <h2 className="text-[2.5rem] text-yellow-300 lg:text-[3rem] font-black mb-0 leading-none">
                 Alumni Base
               </h2>
-              <p className="text-base text-zinc-50">
+              <p className=" text-zinc-50">
                 Join the KGEC Alumni Association to stay connected with a vast
                 network of successful graduates from diverse fields.
               </p>
             </div>
             <div>
-              <h2 className="text-2xl lg:text-3xl font-black mb-4 text-zinc-100">
+              <h2 className="text-2xl lg:text-3xl font-black mb-4 text-yellow-300">
                 Why you should care to register?
               </h2>
-              <h2 className=" text-lg lg:text-xl mb-2 font-semibold text-zinc-100">
+              <h2 className=" text-lg lg:text-xl mb-2 font-semibold text-yellow-300">
                 As a Student of KGEC
               </h2>
               <ul className="list-disc px-5 mb-4 text-zinc-100">
@@ -45,7 +45,7 @@ function AlumiBase() {
                 </li>
               </ul>
 
-              <h2 className="text-zinc-100 text-lg lg:text-xl mb-2 font-semibold">
+              <h2 className="text-yellow-300 text-lg lg:text-xl mb-2 font-semibold">
                 As an Alumnus of KGEC
               </h2>
               <ul className="text-zinc-100 list-disc px-5 mb-4">
@@ -72,7 +72,7 @@ function AlumiBase() {
               </ul>
               <button
                 onClick={() => signIn("linkedin")}
-                className="bg-[#f7c212]/90 hover:bg-[#f7c212] duration-300 text-zinc-900 focus:ring-1 ring-indigo-50 lg:min-w-fit px-3 py-3 rounded-lg shadow-md flex justify-center items-center gap-2 max-w-max font-semibold"
+                className="bg-yellow-300 hover:bg-yellow-300/90 duration-300 text-zinc-900 focus:ring-1 ring-indigo-50 lg:min-w-fit px-3 py-3 rounded-lg mt-8 shadow-md flex justify-center items-center gap-2 max-w-max font-semibold"
               >
                 Register / Log In
                 <svg

@@ -11,7 +11,7 @@ export default function MobileMenu() {
     <div className="lg:hidden ">
       <div className="flex justify-between items-center relative">
         <button
-          className="text-2xl bg-[#f7c212]/90 hover:bg-[#f7c212] p-2 rounded-lg"
+          className="text-2xl bg-yellow-300 hover:bg-yellow-300/90 p-2 rounded-lg"
           onClick={() => setIsOpen((prev) => !prev)}
         >
           {isOpen ? (
@@ -22,7 +22,7 @@ export default function MobileMenu() {
             >
               <path
                 fill="currentColor"
-                d="M204.2 195.8a5.9 5.9 0 1 1-8.4 8.4L128 136.5l-67.8 67.7a5.9 5.9 0 0 1-8.4-8.4l67.7-67.8l-67.7-67.8a5.9 5.9 0 0 1 8.4-8.4l67.8 67.7l67.8-67.7a5.9 5.9 0 0 1 8.4 8.4L136.5 128Z"
+                d="M205.7 194.3a8.1 8.1 0 0 1 0 11.4a8.2 8.2 0 0 1-11.4 0L128 139.3l-66.3 66.4a8.2 8.2 0 0 1-11.4 0a8.1 8.1 0 0 1 0-11.4l66.4-66.3l-66.4-66.3a8.1 8.1 0 0 1 11.4-11.4l66.3 66.4l66.3-66.4a8.1 8.1 0 0 1 11.4 11.4L139.3 128Z"
               />
             </svg>
           ) : (
@@ -33,23 +33,23 @@ export default function MobileMenu() {
             >
               <path
                 fill="currentColor"
-                d="M222 128a6 6 0 0 1-6 6H40a6 6 0 0 1 0-12h176a6 6 0 0 1 6 6ZM40 70h176a6 6 0 0 0 0-12H40a6 6 0 0 0 0 12Zm176 116H40a6 6 0 0 0 0 12h176a6 6 0 0 0 0-12Z"
+                d="M224 128a8 8 0 0 1-8 8H40a8 8 0 0 1 0-16h176a8 8 0 0 1 8 8ZM40 72h176a8 8 0 0 0 0-16H40a8 8 0 0 0 0 16Zm176 112H40a8 8 0 0 0 0 16h176a8 8 0 0 0 0-16Z"
               />
             </svg>
           )}
         </button>
       </div>
       {isOpen && (
-        <div className="flex flex-col absolute top-12 right-12 bg-[#f7c212] p-2 rounded-lg">
+        <div className="flex flex-col absolute w-[180px] top-12 right-8 bg-zinc-100/40 backdrop-blur-lg p-2 rounded-lg">
           {navItems.map((item) => (
             <Link
               href={item.path}
               key={item.name}
               className={`${
-                router.pathname === item.path ? "bg-[#f2f633]" : ""
-              }bg-[#f7c212] hover:bg-[#f3f712] rounded-lg p-2`}
+                router.pathname === item.path ? "bg-yellow-300" : ""
+              } rounded-lg p-2 font-semibold flex gap-2 items-center`}
             >
-              {item.name}
+              {item.icon}{item.name}
             </Link>
           ))}
         </div>

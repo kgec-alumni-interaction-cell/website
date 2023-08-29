@@ -1,47 +1,47 @@
 function Footer() {
   return (
-    <footer className="bg-[#2d4698]/80 min-w-full min-h-[16vh] flex flex-col gap-8 justify-start px-6 md:px-8 lg:px-24 py-6">
-      <p className="text-md font-bold leading-tight text-zinc-100">
+    <footer className="bg-yellow-50 min-w-full min-h-[16vh] max-h-auto flex flex-col-reverse gap-8 justify-start px-6 md:px-8 lg:px-24 py-6">
+      <p className="text-md font-semibold leading-tight text-zinc-950">
         Copyright &copy; 2023 KGEC Alumni Association. All rights reserved.
       </p>
       <div className="flex flex-col lg:flex-row justify-between gap-8">
         <div className="flex flex-col lg:flex-row gap-4 lg:gap-8">
           <a
             href=""
-            className="text-zinc-100 hover:text-zinc-100/60 font-semibold"
+            className="text-zinc-950 hover:text-zinc-800/80 duration-200 font-semibold"
           >
             Home
           </a>
           <a
             href=""
-            className="text-zinc-100 hover:text-zinc-100/60 font-semibold"
+            className="text-zinc-950 hover:text-zinc-800/80 duration-200 font-semibold"
           >
             About Us
           </a>
           <a
             href=""
-            className="text-zinc-100 hover:text-zinc-100/60 font-semibold"
+            className="text-zinc-950 hover:text-zinc-800/80 duration-200 font-semibold"
           >
             Events
           </a>
           <a
             href=""
-            className="text-zinc-100 hover:text-zinc-100/60 font-semibold"
+            className="text-zinc-950 hover:text-zinc-800/80 duration-200 font-semibold"
           >
             Scholariships
           </a>
           <a
             href=""
-            className="text-zinc-100 hover:text-zinc-100/60 font-semibold"
+            className="text-zinc-950 hover:text-zinc-800/80 duration-200 font-semibold"
           >
             {" "}
             Alumni Base
           </a>
         </div>
-        <div className="flex divide-x divide-zinc-500 gap-6">
+        <div className="flex divide-x divide-zinc-700 gap-6">
           <a
             href=""
-            className="text-zinc-900 hover:text-zinc-900/60 font-semibold"
+            className="text-zinc-950 hover:text-zinc-800/80 duration-200 font-semibold"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +57,7 @@ function Footer() {
           </a>
           <a
             href=""
-            className="text-zinc-900 hover:text-zinc-900/60 font-semibold pl-6"
+            className="text-zinc-950 hover:text-zinc-800/80 duration-200 font-semibold pl-6"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -73,7 +73,7 @@ function Footer() {
           </a>
           <a
             href=""
-            className="text-zinc-900 hover:text-zinc-900/60 font-semibold pl-6"
+            className="text-zinc-950 hover:text-zinc-800/80 duration-200 font-semibold pl-6"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -89,7 +89,7 @@ function Footer() {
           </a>
           <a
             href=""
-            className="text-zinc-900 hover:text-zinc-900/60 font-semibold pl-6"
+            className="text-zinc-950 hover:text-zinc-800/80 duration-200 font-semibold pl-6"
           >
             {" "}
             <svg

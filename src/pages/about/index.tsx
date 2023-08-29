@@ -26,17 +26,17 @@ function About() {
   const [curentSidebarItem, setCurrentSidebarItem] = useState(0);
   return (
     <Layout>
-      <section className="  bg-[#2d4698] min-w-full flex flex-col lg:flex-row min-h-screen p-12 px-8 gap-4 lg:gap-8 lg:p-24">
+      <section className="bg-gradient-to-b from-violet-500 via-indigo-500 to-indigo-600 about min-w-full flex flex-col lg:flex-row min-h-screen p-12 px-8 gap-4 lg:gap-8 lg:p-24">
         <MobileDropDown onSelect={(index) => setCurrentSidebarItem(index)} />
         <div className="w-full lg:w-[75%] ">
           {curentSidebarItem === 0 && (
             <div className="rounded-lg p-2 text-zinc-100">
-              <h2 className="text-[3rem] lg:text-[4rem] font-black text-zinc-100 mb-2">About Us</h2>
+              <h2 className="text-[2.5rem] lg:text-[3rem] font-black text-yellow-300 mb-2 leading-none">About Us</h2>
               Our association is a beacon of unity and camaraderie, bringing
               together graduates from diverse disciplines and generations. We
               take immense pride in our shared experiences, accomplishments, and
               the values instilled in us during our time at KGEC.
-              <h2 className="text-2xl lg:text-3xl font-black my-2">
+              <h2 className="text-2xl lg:text-3xl text-yellow-300 font-black my-2">
                 Our Goals
               </h2>
               <ul className="list-disc pl-8">
@@ -73,7 +73,7 @@ function About() {
           {curentSidebarItem === 1 && <div className="text-zinc-100">Student Members</div>}
           {curentSidebarItem === 2 && (
             <div>
-              <h2 className="text-2xl lg:text-3xl font-black mb-2 text-zinc-100">
+              <h2 className="text-2xl text-yellow-300 lg:text-3xl font-black mb-2">
                 Message from the President
               </h2>
               <p className="text-zinc-100">
@@ -99,7 +99,7 @@ function About() {
           )}
           {curentSidebarItem === 3 && (
             <div>
-              <h2 className="text-2xl lg:text-3xl font-black mb-2 text-zinc-100">
+              <h2 className="text-2xl text-yellow-300 lg:text-3xl font-black mb-2">
                 Message from the Vice President
               </h2>
               <p className="text-zinc-100">
@@ -126,7 +126,7 @@ function About() {
           )}
           {curentSidebarItem === 4 && (
             <div>
-              <h2 className="text-2xl lg:text-3xl font-black mb-2 text-zinc-100">
+              <h2 className="text-2xl lg:text-3xl font-black mb-2 text-yellow-300">
                 Message from the Joint Secretaries
               </h2>
               <p className="text-zinc-100">
@@ -150,7 +150,7 @@ function About() {
             <div
               key={index}
               className={`w-full h-12 flex items-center justify-start cursor-pointer p-2 rounded-lg text-zinc-50 ${
-                curentSidebarItem === index ? "bg-[#f7c212]/90" : "bg-[#000616]/50 hover:bg-[#000616]/80"
+                curentSidebarItem === index ? "bg-yellow-300 text-zinc-950 font-bold" : "bg-indigo-900/40"
               }`}
               onClick={() => setCurrentSidebarItem(index)}
             >
@@ -174,7 +174,7 @@ function MobileDropDown({ onSelect }: { onSelect: (index: number) => void }) {
   };
 
   return (
-    <div className="w-full flex flex-col lg:hidden items-center justify-center bg-[#000616]/50 rounded-lg p-2">
+    <div className="w-full flex flex-col lg:hidden items-center justify-center bg-indigo-900/40 rounded-lg p-2">
       <div
         className="w-full flex items-center justify-between cursor-pointer"
         onClick={() => setIsOpen(!isOpen)}
