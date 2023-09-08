@@ -6,7 +6,7 @@ function AlumiBase() {
   const { data: session } = useSession();
 
   // This is shown if not logged in
-  if (session)
+  if (!session)
     return (
       <Layout>
         <section className="bg-gradient-to-b from-violet-500 via-indigo-500 to-indigo-600 min-h-screen min-w-full flex flex-col">
@@ -95,7 +95,7 @@ function AlumiBase() {
       </Layout>
     );
 
-  if (!session)
+  if (session)
     return (
       <Layout>
         <AlumniBase />
