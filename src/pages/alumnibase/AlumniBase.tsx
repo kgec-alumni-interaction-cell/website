@@ -1,7 +1,13 @@
 import React from "react";
 import AlumniCard from "./AlumniCard";
 
-const alumniList = [
+const alumniList: {
+  name: string;
+  pfp: string;
+  batch: string;
+  worksAt: string;
+  linkedinProfile: string;
+}[] = [
   {
     name: "Neha Sinha",
     pfp: "http://res.cloudinary.com/dj5k9ihd8/image/upload/v1678289521/drmcsdcgjgjkob7npucx.jpg",
