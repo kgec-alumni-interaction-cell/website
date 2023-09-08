@@ -15,22 +15,22 @@ function AlumniCard({
     <div className="flex flex-col mx-auto px-3 py-5 rounded-2xl text-base md:text-lg text-zinc-100 gap-3 w-[270px] bg-gradient-to-b from-violet-700 via-indigo-700 to-indigo-800">
       <img
         className="rounded-full h-28 w-28 mb-5"
-        src={alumni.pfp}
+        src={alumni?.pfp}
         alt=""
       />
 
       <span>
-        <span className="font-bold">Name:</span> {alumni.name}
+        <span className="font-bold">Name:</span> {alumni?.name}
       </span>
       <span>
-        <span className="font-bold">Batch:</span> {alumni.batch}
+        <span className="font-bold">Batch:</span> {alumni?.batch}
       </span>
       <span>
-        <span className="font-bold">Works at:</span> {alumni.worksAt}
+        <span className="font-bold">Works at:</span> {alumni?.worksAt}
       </span>
 
       <div className="flex gap-3 mt-4">
-        <a href={alumni.linkedinProfile} className="text-zinc-100 font-semibold">
+        <a href={alumni?.linkedinProfile} className="text-zinc-100 font-semibold">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="28"
