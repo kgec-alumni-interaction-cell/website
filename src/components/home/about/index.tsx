@@ -4,8 +4,8 @@ export default function HomeAbout() {
   const router = useRouter();
 
   return (
-    <section className="h-[calc(100vh-12px)] about min-w-full flex flex-col p-6 md:p-8 lg:p-24 realtive bg-[#2d4698]">
-      <h2 className="text-[2rem] lg:text-[3rem] font-black text-zinc-50 mb-4 leading-none">
+    <section className="about min-w-full flex flex-col px-6 md:px-8 lg:px-24 realtive">
+      <h2 className="text-[2rem] lg:text-[3rem] font-black text-yellow-300 mb-4 leading-none">
         Who are we?
       </h2>
 
@@ -28,7 +28,7 @@ export default function HomeAbout() {
 
       <button
         onClick={() => router.push("/about")}
-        className="bg-[#f7c212]/80 hover:bg-[#f7c212] duration-300 text-zinc-900 focus:ring-1 ring-indigo-50 lg:min-w-fit px-3 py-3 rounded-lg shadow-md flex justify-center items-center gap-2 max-w-max font-semibold mt-8 tetx-lg"
+        className="bg-yellow-300 hover:bg-yellow-300/90 duration-300 text-zinc-900 focus:ring-1 ring-indigo-50 lg:min-w-fit px-3 py-3 rounded-lg shadow-md flex justify-center items-center gap-2 max-w-max font-semibold mt-8 tetx-lg"
       >
         Learn More
         <svg

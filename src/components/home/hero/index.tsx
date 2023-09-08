@@ -22,12 +22,12 @@ export default function HomeHero() {
 
   return (
     <section className="h-[calc(100vh-12px)] hero bg-no-repeat bg-cover lg:bg-bottom min-w-full flex flex-col">
-      <div className="min-w-full flex lg:flex-row flex-col p-8 lg:p-24 pb-0 lg:pb-0 h-[95%]">
+      <div className="min-w-full flex lg:flex-row flex-col px-8 lg:px-24 pb-0 lg:pb-0 h-[95%]">
         <div className="w-full flex flex-col justify-center lg:items-center h-full ">
           <h3 className="text-[1rem] lg:text-[2rem] font-semibold leading-[1.1] m-0 text-zinc-100">
             Kalyani Government Engineering College
           </h3>
-          <h2 className="text-[2.5rem] lg:text-[4rem] leading-[1] font-black m-0 text-indigo-300 my-2 lg:my-0">
+          <h2 className="text-[2.5rem] lg:text-[4rem] leading-[1] font-black m-0 bg-gradient-to-b from-violet-400 via-indigo-400 to-indigo-500 text-transparent bg-clip-text my-2 lg:my-0">
             Alumni Association
           </h2>
           <p className="text-lg mb-8 text-zinc-100">
@@ -53,7 +53,7 @@ export default function HomeHero() {
           </div>
           <button
             onClick={() => router.push("/alumnibase")}
-            className="bg-[#f7c212]/90 hover:bg-[#f7c212] duration-300 text-zinc-900 focus:ring-1 ring-indigo-50 lg:min-w-fit px-3 py-3 rounded-lg shadow-md flex justify-center items-center gap-2 max-w-max font-semibold group"
+            className="bg-yellow-300 hover:bg-yellow-300/80 duration-300 text-zinc-900 focus:ring-1 ring-indigo-50 lg:min-w-fit px-3 py-3 rounded-lg shadow-md flex justify-center items-center gap-2 max-w-max font-semibold group"
           >
             Visit the Alumni Base
             <svg

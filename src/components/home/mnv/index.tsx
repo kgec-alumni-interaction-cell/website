@@ -10,9 +10,9 @@ const points = [
 
 export default function HomeMNV() {
   return (
-    <section className="mnv bg-[#2d4698]">
-      <div className="bg-[#000616]/50 min-w-full flex flex-col p-6 md:p-8 lg:p-24 h-100 md:h-[calc(100vh-12px)] ">
-        <h2 className="text-[2rem] lg:text-[3rem] font-black text-zinc-100 mb-4 leading-none">Mission & Vision</h2>
+    <section className="mnv">
+      <div className="min-w-full flex flex-col px-6 md:px-8 lg:px-24 h-100">
+        <h2 className="text-[2rem] lg:text-[3rem] font-black text-yellow-300 mb-4 leading-none">Mission & Vision</h2>
         {/* <div className="lg:hidden">
           <Slideshow>
             {points.map((point: string, idx) => (
@@ -27,7 +27,7 @@ export default function HomeMNV() {
         <ol className="flex text-lg flex-col gap-9">
           {points.map((point: string, idx) => (
             <div className="flex justify-center" key={idx}>
-              <div className="my-6 mr-6 md:mr-12 h-[15px] md:h-[30px] w-[25px] md:w-[50px] p-2 py-3 flex items-center justify-center rounded-full bg-indigo-400 text-white">
+              <div className="my-6 mr-6 md:mr-12 h-[15px] md:h-[30px] w-[25px] md:w-[50px] p-2 py-3 flex items-center justify-center rounded-full bg-yellow-300/80 text-zinc-950 font-bold">
                 {idx + 1}
               </div>
               <p className="p-0 text-zinc-100">{point}</p>

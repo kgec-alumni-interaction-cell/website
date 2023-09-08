@@ -1,8 +1,8 @@
 export default function HomeContact() {
   return (
-    <section className="bg-[#2d4698]">
-      <div className="bg-[#000616]/50 min-w-full flex flex-col p-6 md:p-8 lg:p-24 h-[calc(100vh-12px)]">
-        <h2 className="text-[2rem] lg:text-[3rem] font-black mb-4 text-zinc-100 leading-none">
+    <section className="">
+      <div className="min-w-full flex flex-col px-6 md:px-8 lg:px-24">
+        <h2 className="text-[2rem] lg:text-[3rem] font-black mb-4 text-yellow-300 leading-none">
           Contact Us
         </h2>
         <p className="text-lg text-zinc-100">
