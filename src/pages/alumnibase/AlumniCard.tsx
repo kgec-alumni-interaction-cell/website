@@ -1,22 +1,17 @@
+import Alumni from "@/types/types";
 import React from "react";
 
-function AlumniCard({
-  alumni,
-}: {
-  alumni: {
-    name: string;
-    pfp: string;
-    batch: string;
-    worksAt: string;
-    linkedinProfile: string;
-  };
-}) {
+interface Props {
+  alumni: Alumni;
+}
+
+function AlumniCard({ alumni }: Props) {
   return (
     <div className="flex flex-col mx-auto px-3 py-5 rounded-2xl text-base md:text-lg text-zinc-100 gap-3 w-[270px] bg-gradient-to-b from-violet-700 via-indigo-700 to-indigo-800">
       <img
         className="rounded-full h-28 w-28 mb-5"
-        src={alumni?.pfp}
-        alt=""
+        src={alumni?.image}
+        alt="No Profile Image"
       />
 
       <span>
@@ -30,7 +25,10 @@ function AlumniCard({
       </span>
 
       <div className="flex gap-3 mt-4">
-        <a href={alumni?.linkedinProfile} className="text-zinc-100 font-semibold">
+        <a
+          href={alumni?.linkedinProfile}
+          className="text-zinc-100 font-semibold"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="28"
