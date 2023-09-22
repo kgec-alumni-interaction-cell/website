@@ -4,7 +4,7 @@ import AlumniBase from "./AlumniBase";
 import AlumniBaseInfo from "./AlumniBaseInfo";
 import Alumni from "@/types/types";
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await fetch(
     "https://kgec-alumni-website.vercel.app/api/alumni/list"
   );
