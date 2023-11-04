@@ -34,7 +34,7 @@ function AlumiBase({ alumniList }: Props) {
   if (!session)
     return (
       <Layout>
-        <AlumniBase alumniList={alumniList} />
+        <AlumniBase alumniList={alumniList || ([] as Alumni[])} />
       </Layout>
     );
 }
