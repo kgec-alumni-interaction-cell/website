@@ -24,14 +24,14 @@ function AlumiBase({ alumniList }: Props) {
   const { data: session } = useSession();
 
   // This is shown if not logged in
-  if (session)
+  if (!session)
     return (
       <Layout>
         <AlumniBaseInfo />
       </Layout>
     );
 
-  if (!session)
+  if (session)
     return (
       <Layout>
         <AlumniBase alumniList={alumniList || ([] as Alumni[])} />
