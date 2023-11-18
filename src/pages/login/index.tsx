@@ -1,4 +1,5 @@
 import Layout from "@/components/layout";
+import Link from "next/link";
 
 function Login() {
   return (
@@ -62,13 +63,13 @@ function Login() {
               </form>
 
               <p className="mt-10 text-center text-sm text-white">
-                Didn't recieve a password?
-                <a
+                Didn&apos;t recieve a password?
+                <Link
                   href="/register"
                   className="pl-1 font-semibold leading-6 text-yellow-300 hover:text-yellow-200"
                 >
                   Register as an alumni now!
-                </a>
+                </Link>
               </p>
             </div>
           </div>

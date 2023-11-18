@@ -1,5 +1,6 @@
 import React from "react";
 import { signIn } from "next-auth/react";
+import Link from "next/link";
 
 function AlumniBaseInfo() {
   return (
@@ -65,7 +66,7 @@ function AlumniBaseInfo() {
               future generations of KGEC graduates.
             </li>
           </ul>
-          <a
+          <Link
             href="/login"
             className="bg-yellow-300 hover:bg-yellow-300/90 duration-300 text-zinc-900 focus:ring-1 ring-indigo-50 lg:min-w-fit px-3 py-3 rounded-lg mt-8 shadow-md flex justify-center items-center gap-2 max-w-max font-semibold"
           >
@@ -82,7 +83,7 @@ function AlumniBaseInfo() {
                 d="m221.7 133.7l-72 72a8.2 8.2 0 0 1-11.4 0a8.1 8.1 0 0 1 0-11.4l58.4-58.3H40a8 8 0 0 1 0-16h156.7l-58.4-58.3a8.1 8.1 0 0 1 11.4-11.4l72 72a8.1 8.1 0 0 1 0 11.4Z"
               />
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
     </section>
