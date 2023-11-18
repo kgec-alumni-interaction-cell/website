@@ -1,6 +1,6 @@
 import Layout from "@/components/layout";
 
-function Login() {
+function Register() {
   return (
     <Layout>
       <section className="bg-gradient-to-b from-violet-500 via-indigo-500 to-indigo-600 min-w-full flex flex-col">
@@ -8,7 +8,7 @@ function Login() {
           <div className="flex min-h-full flex-col justify-center px-6 pb-12 lg:px-8">
             <div className="sm:mx-auto sm:w-full sm:max-w-sm">
               <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-yellow-300">
-                Log In to the KGEC Alumni Portal
+                Register into the KGEC Alumni Portal
               </h2>
             </div>
 
@@ -78,4 +78,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Register;
