@@ -31,20 +31,68 @@ function Register() {
                 </div>
 
                 <div>
-                  <div className="flex items-center justify-between">
-                    <label
-                      htmlFor="password"
-                      className="block text-sm font-medium leading-6 text-yellow-300"
-                    >
-                      Password
-                    </label>
-                  </div>
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium leading-6 text-yellow-300"
+                  >
+                    E-mail Address
+                  </label>
                   <div className="mt-2">
                     <input
-                      id="password"
-                      name="password"
-                      type="password"
-                      autoComplete="current-password"
+                      name="email"
+                      required
+                      className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    />
+                  </div>
+                </div>
+
+                <label className="block text-sm font-medium leading-6 text-yellow-300">
+                    <input type="checkbox" /> I am currently a student at KGEC
+                  </label>
+
+                <div className="flex gap-2">
+                  <div>
+                    <label
+                      htmlFor="year"
+                      className="block text-sm font-medium leading-6 text-yellow-300"
+                    >
+                      Graduation Year
+                    </label>
+                    <input
+                      name="year"
+                      required
+                      className="block w-28 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    />
+                  </div>
+
+                  
+
+                  <div>
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium leading-6 text-yellow-300"
+                    >
+                      Proof of Graduation
+                    </label>
+                    <input
+                      type="file"
+                      name="small-file-input"
+                      id="small-file-input"
+                      className="block w-full border border-gray-200 shadow-sm rounded-lg text-sm bg-zinc-50 focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none file:border-0 file:me-4 file:py-2 file:px-4"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="work"
+                    className="block text-sm font-medium leading-6 text-yellow-300"
+                  >
+                    Current Workplace
+                  </label>
+                  <div className="mt-2">
+                    <input
+                      name="work"
                       required
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
@@ -54,20 +102,20 @@ function Register() {
                 <div>
                   <button
                     type="submit"
-                    className="flex w-full justify-center rounded-md bg-yellow-300 px-3 py-1.5 text-sm font-semibold leading-6 text-zinc-800 shadow-sm hover:bg-yellow-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    className="flex w-full justify-center rounded-md  bg-yellow-300 px-3 py-1.5 text-sm font-semibold leading-6 text-zinc-800 shadow-sm hover:bg-yellow-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                   >
-                    Sign in
+                    Submit for Verification
                   </button>
                 </div>
               </form>
 
               <p className="mt-10 text-center text-sm text-white">
-                Didn't recieve a password?
+                Already recieved a password?
                 <a
-                  href="#"
+                  href="/login"
                   className="pl-1 font-semibold leading-6 text-yellow-300 hover:text-yellow-200"
                 >
-                  Register as an alumni now!
+                  Log in now!
                 </a>
               </p>
             </div>

@@ -64,7 +64,7 @@ function Login() {
               <p className="mt-10 text-center text-sm text-white">
                 Didn't recieve a password?
                 <a
-                  href="#"
+                  href="/register"
                   className="pl-1 font-semibold leading-6 text-yellow-300 hover:text-yellow-200"
                 >
                   Register as an alumni now!
