@@ -4,7 +4,7 @@ import AlumniBase from "./AlumniBase";
 import AlumniBaseInfo from "./AlumniBaseInfo";
 import Alumni from "@/types/types";
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await fetch(
     "https://kgec-alumni-website.vercel.app/api/alumni/list"
   );
@@ -24,17 +24,17 @@ function AlumiBase({ alumniList }: Props) {
   const { data: session } = useSession();
 
   // This is shown if not logged in
-  if (session)
+  if (!session)
     return (
       <Layout>
         <AlumniBaseInfo />
       </Layout>
     );
 
-  if (!session)
+  if (session)
     return (
       <Layout>
-        <AlumniBase alumniList={alumniList} />
+        <AlumniBase alumniList={alumniList || ([] as Alumni[])} />
       </Layout>
     );
 }
