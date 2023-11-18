@@ -1,5 +1,5 @@
 import Layout from "@/components/layout";
-import { useSession, signIn } from "next-auth/react";
+// import { useSession, signIn } from "next-auth/react";
 import AlumniBase from "./AlumniBase";
 import AlumniBaseInfo from "./AlumniBaseInfo";
 import Alumni from "@/types/types";
@@ -21,7 +21,8 @@ interface Props {
 }
 
 function AlumiBase({ alumniList }: Props) {
-  const { data: session } = useSession();
+  // const { data: session } = useSession();
+  const session = 0
 
   // This is shown if not logged in
   if (!session)
