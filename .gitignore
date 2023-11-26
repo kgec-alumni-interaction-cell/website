@@ -20,6 +20,7 @@
 *.pem
 .env
 settings.json
+.devcontainer
 
 # debug
 npm-debug.log*
