@@ -8,7 +8,6 @@ export default function Home() {
   return (
     <Layout>
       <HomeHero />
-      <HomeAbout />
       <HomeMNV />
       <HomeContact />
     </Layout>
