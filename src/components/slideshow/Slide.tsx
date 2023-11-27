@@ -3,7 +3,7 @@ interface Props {
 }
 function Slide({ children }: Props) {
   return (
-    <div className="min-w-full">
+    <div className="min-w-full h-fit">
       {children}
     </div>
   )
