@@ -26,17 +26,19 @@ function About() {
   const [curentSidebarItem, setCurrentSidebarItem] = useState(0);
   return (
     <Layout>
-      <section className="bg-gradient-to-b from-violet-500 via-indigo-500 to-indigo-600 about min-w-full flex flex-col lg:flex-row min-h-screen p-12 px-8 gap-4 lg:gap-8 lg:p-24">
+      <section className="bg-zinc-50 about min-w-full flex flex-col lg:flex-row min-h-screen p-12 px-8 gap-4 lg:gap-8 lg:p-24">
         <MobileDropDown onSelect={(index) => setCurrentSidebarItem(index)} />
         <div className="w-full lg:w-[75%] ">
           {curentSidebarItem === 0 && (
-            <div className="rounded-lg p-2 text-zinc-100">
-              <h2 className="text-[2.5rem] lg:text-[3rem] font-black text-yellow-300 mb-2 leading-none">About Us</h2>
+            <div className="rounded-lg p-2 text-zinc-950">
+              <h2 className="text-[2.5rem] lg:text-[3rem] font-black text-indigo-500 mb-2 leading-none">
+                About Us
+              </h2>
               Our association is a beacon of unity and camaraderie, bringing
               together graduates from diverse disciplines and generations. We
               take immense pride in our shared experiences, accomplishments, and
               the values instilled in us during our time at KGEC.
-              <h2 className="text-2xl lg:text-3xl text-yellow-300 font-black my-2">
+              <h2 className="text-2xl lg:text-3xl text-indigo-500 font-black my-2">
                 Our Goals
               </h2>
               <ul className="list-disc pl-8">
@@ -70,13 +72,15 @@ function About() {
               </p>
             </div>
           )}
-          {curentSidebarItem === 1 && <div className="text-zinc-100">Student Members</div>}
+          {curentSidebarItem === 1 && (
+            <div className="text-zinc-950">Student Members</div>
+          )}
           {curentSidebarItem === 2 && (
             <div>
-              <h2 className="text-2xl text-yellow-300 lg:text-3xl font-black mb-2">
+              <h2 className="text-2xl text-indigo-500 lg:text-3xl font-black mb-2">
                 Message from the President
               </h2>
-              <p className="text-zinc-100">
+              <p className="text-zinc-950">
                 “As the President of the Kalyani Government Engineering College
                 Alumni Association and a current student at KGEC, it is an honor
                 to extend my warm greetings to all our esteemed alumni. Our
@@ -94,15 +98,17 @@ function About() {
                 experiences, as we collectively work towards making KGEC a hub
                 of excellence and innovation.”
               </p>
-              <p className="mt-2 font-semibold text-zinc-100">- Shubhankar Das (President)</p>
+              <p className="mt-2 font-semibold text-zinc-100">
+                - Shubhankar Das (President)
+              </p>
             </div>
           )}
           {curentSidebarItem === 3 && (
             <div>
-              <h2 className="text-2xl text-yellow-300 lg:text-3xl font-black mb-2">
+              <h2 className="text-2xl text-indigo-500 lg:text-3xl font-black mb-2">
                 Message from the Vice President
               </h2>
-              <p className="text-zinc-100">
+              <p className="text-zinc-950">
                 “I am delighted to address everyone as the Vice-President of the
                 Kalyani Government Engineering College Alumni Association and a
                 current student at KGEC. Our college is not just a place of
@@ -126,10 +132,10 @@ function About() {
           )}
           {curentSidebarItem === 4 && (
             <div>
-              <h2 className="text-2xl lg:text-3xl font-black mb-2 text-yellow-300">
+              <h2 className="text-2xl lg:text-3xl font-black mb-2 text-indigo-500">
                 Message from the Joint Secretaries
               </h2>
-              <p className="text-zinc-100">
+              <p className="text-zinc-950">
                 “The KGEC Alumni Association aims to bridge the gap between
                 current students and graduates, fostering connections that last
                 beyond graduation. We are dedicated to organizing events and
@@ -149,8 +155,10 @@ function About() {
           {sidebarItems.map((item, index) => (
             <div
               key={index}
-              className={`w-full h-12 flex items-center justify-start cursor-pointer p-2 rounded-lg text-zinc-50 ${
-                curentSidebarItem === index ? "bg-yellow-300 text-zinc-950 font-bold" : "bg-indigo-900/40"
+              className={`w-full h-12 flex items-center justify-start cursor-pointer p-2 rounded-lg ${
+                curentSidebarItem === index
+                  ? "bg-indigo-300 text-zinc-950 font-bold"
+                  : "bg-indigo-300/50 text-zinc-800"
               }`}
               onClick={() => setCurrentSidebarItem(index)}
             >

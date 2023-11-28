@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="bg-yellow-50 min-w-full min-h-[16vh] max-h-auto flex flex-col-reverse gap-8 justify-start px-6 md:px-8 lg:px-24 py-6">
+    <footer className="bg-indigo-50 min-w-full min-h-[16vh] max-h-auto flex flex-col-reverse gap-8 justify-start px-6 md:px-8 lg:px-24 py-6">
       <p className="text-md font-semibold leading-tight text-zinc-950">
         Copyright &copy; 2023 KGEC Alumni Association. All rights reserved.
       </p>

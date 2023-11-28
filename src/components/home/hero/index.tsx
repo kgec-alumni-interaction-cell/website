@@ -53,7 +53,7 @@ export default function HomeHero() {
           </div>
           <button
             onClick={() => router.push("/alumnibase")}
-            className="bg-yellow-300 hover:bg-yellow-300/80 duration-300 text-zinc-900 focus:ring-1 ring-indigo-50 lg:min-w-fit px-3 py-3 rounded-lg shadow-md flex justify-center items-center gap-2 max-w-max font-semibold group"
+            className="bg-gradient-to-tl from-blue-100 via-sky-200 to-indigo-300 hover:from-blue-200 hover:via-sky-300 hover:to-indigo-400 duration-300 text-zinc-900 focus:ring-1 ring-indigo-50 lg:min-w-fit px-5 py-3 hover:scale-x-[1.03] ease-out rounded-full shadow-md flex justify-center items-center gap-2 max-w-max font-semibold group"
           >
             Visit the Alumni Base
             <svg
@@ -61,7 +61,7 @@ export default function HomeHero() {
               width="16"
               height="16"
               viewBox="0 0 256 256"
-              className="duration-500"
+              className="hidden group-hover:block duration-300 ease-out delay-300"
             >
               <path
                 fill="currentColor"
