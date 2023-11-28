@@ -36,10 +36,6 @@ export const navItems = [
     ),
   },
   {
-    name: "About",
-    path: "/about",
-  },
-  {
     name: "Events",
     path: "/events",
     icon: (
@@ -98,7 +94,7 @@ export default function Navbar() {
   const router = useRouter();
 
   return (
-    <nav className="h-[3.5rem] px-8 lg:px-24 py-2 bg-yellow-50 flex justify-between items-center sticky top-0 z-10 ">
+    <nav className="h-[3.5rem] px-8 lg:px-24 py-2 bg-indigo-50 flex justify-between items-center sticky top-0 z-10 ">
       <div className="flex items-center">
         <h2 className="font-bold">KGEC Alumni Asscoiation</h2>
       </div>
@@ -107,8 +103,8 @@ export default function Navbar() {
           <Link
             href={item.path}
             key={item.name}
-            className={`p-2 rounded-lg ${
-              router.pathname === item.path ? "bg-yellow-300 font-semibold" : ""
+            className={`p-2 rounded-lg hover:bg-indigo-200/50 ${
+              router.pathname === item.path ? "text-indigo-500 font-semibold" : ""
             } cursor-pointer mx-2`}
           >
             {item.name}

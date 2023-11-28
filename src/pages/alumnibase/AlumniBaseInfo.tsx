@@ -4,25 +4,25 @@ import Link from "next/link";
 
 function AlumniBaseInfo() {
   return (
-    <section className="bg-gradient-to-b from-violet-500 via-indigo-500 to-indigo-600 min-h-screen min-w-full flex flex-col">
+    <section className="min-h-screen min-w-full flex flex-col">
       <div className="min-w-full flex flex-col gap-8 p-12 px-8 lg:p-24 h-full">
         <div className="w-full justify-center">
-          <h2 className="text-[2.5rem] text-yellow-300 lg:text-[3rem] font-black mb-0 leading-none">
+          <h2 className="text-[2.5rem] text-indigo-500 lg:text-[3rem] font-black mb-0 leading-none">
             Alumni Base
           </h2>
-          <p className=" text-zinc-50">
+          <p className=" text-zinc-950">
             Join the KGEC Alumni Association to stay connected with a vast
             network of successful graduates from diverse fields.
           </p>
         </div>
         <div>
-          <h2 className="text-2xl lg:text-3xl font-black mb-4 text-yellow-300">
+          <h2 className="text-2xl lg:text-3xl font-black mb-4 text-indigo-500">
             Why you should care to register?
           </h2>
-          <h2 className=" text-lg lg:text-xl mb-2 font-semibold text-yellow-300">
+          <h2 className=" text-lg lg:text-xl mb-2 font-semibold text-indigo-500">
             As a Student of KGEC
           </h2>
-          <ul className="list-disc px-5 mb-4 text-zinc-100">
+          <ul className="list-disc px-5 mb-4 text-zinc-950">
             <li>
               By registering on the college alumni website, students of KGEC
               gain access to a vast network of successful graduates from diverse
@@ -41,10 +41,10 @@ function AlumniBaseInfo() {
             </li>
           </ul>
 
-          <h2 className="text-yellow-300 text-lg lg:text-xl mb-2 font-semibold">
+          <h2 className="text-indigo-500 text-lg lg:text-xl mb-2 font-semibold">
             As an Alumnus of KGEC
           </h2>
-          <ul className="text-zinc-100 list-disc px-5 mb-4">
+          <ul className="text-zinc-950 list-disc px-5 mb-4">
             <li>
               For the esteemed alumni of KGEC, registering on the college alumni
               website presents an opportunity to reconnect with cherished
@@ -68,19 +68,19 @@ function AlumniBaseInfo() {
           </ul>
           <Link
             href="/login"
-            className="bg-yellow-300 hover:bg-yellow-300/90 duration-300 text-zinc-900 focus:ring-1 ring-indigo-50 lg:min-w-fit px-3 py-3 rounded-lg mt-8 shadow-md flex justify-center items-center gap-2 max-w-max font-semibold"
+            className="bg-indigo-300 hover:bg-indigo-400 duration-300 text-zinc-900 focus:ring-1 ring-indigo-50 lg:min-w-fit py-3 px-5 rounded-full hover:scale-x-[1.03] ease-out shadow-md flex justify-center items-center gap-2 max-w-max font-semibold mt-8 tetx-lg group"
           >
-            Log In
+            Sign In
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
+              width="20"
+              height="20"
               viewBox="0 0 256 256"
-              className="hidden group-hover:block duration-500"
+              className="hidden group-hover:block duration-300 ease-out delay-300"
             >
               <path
                 fill="currentColor"
-                d="m221.7 133.7l-72 72a8.2 8.2 0 0 1-11.4 0a8.1 8.1 0 0 1 0-11.4l58.4-58.3H40a8 8 0 0 1 0-16h156.7l-58.4-58.3a8.1 8.1 0 0 1 11.4-11.4l72 72a8.1 8.1 0 0 1 0 11.4Z"
+                d="m140.2 132.2l-41.9 42A6.1 6.1 0 0 1 94 176a6 6 0 0 1-4.2-10.2l31.7-31.8H24a6 6 0 0 1 0-12h97.5L89.8 90.2a5.8 5.8 0 0 1 0-8.4a5.9 5.9 0 0 1 8.5 0l41.9 42l.3.3l.2.2a3.5 3.5 0 0 1 .5.8h.1a6.1 6.1 0 0 1 0 5.6h-.1a3.5 3.5 0 0 1-.5.8l-.2.2ZM192 34h-56a6 6 0 0 0 0 12h56a2 2 0 0 1 2 2v160a2 2 0 0 1-2 2h-56a6 6 0 0 0 0 12h56a14 14 0 0 0 14-14V48a14 14 0 0 0-14-14Z"
               />
             </svg>
           </Link>

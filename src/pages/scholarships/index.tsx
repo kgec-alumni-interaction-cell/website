@@ -32,19 +32,19 @@ const scholarships: Scholarship[] = [
 function Scholarships() {
   return (
     <Layout>
-      <section className="bg-gradient-to-b from-violet-500 via-indigo-500 to-indigo-600 min-w-full flex flex-col">
+      <section className="bg-white min-w-full flex flex-col">
         <div className="min-w-full flex flex-col gap-8 p-12 px-8 lg:p-24 h-full">
           <div className="w-full justify-center">
-            <h2 className="text-[2.5rem] text-yellow-300 lg:text-[3rem] font-black mb-0 leading-none">
+            <h2 className="text-[2.5rem] text-indigo-500 lg:text-[3rem] font-black mb-0 leading-none">
               Scholarships
             </h2>
-            <p className="text-lg text-zinc-100 mt-2">
+            <p className="text-lg text-zinc-950 mt-2">
               The Alumni Cell of Kalyani Government Engineering College proudly
               presents its scholarship schemes, dedicated to nurturing young
               talents who possess exceptional skills but face financial
               constraints.
             </p>
-            <p className="text-lg text-zinc-100 mt-5">
+            <p className="text-lg text-zinc-950 mt-5">
               Our mission is to provide equal opportunities to deserving
               students, enabling them to pursue their academic dreams without
               burden. We envision a future where no promising mind is held back
@@ -59,12 +59,12 @@ function Scholarships() {
         <Slideshow slideTime={10000}>
           {scholarships.map((scholarship: Scholarship, idx) => (
             <Slide key={idx}>
-              <div className="bg-indigo-900/40 md:h-[500px] rounded-xl flex flex-col justify-evenly w-[60vw] md:w-[70vw] mx-auto p-4 whitespace-normal text-center items-center">
+              <div className="bg-indigo-50 md:h-[500px] rounded-xl flex flex-col justify-evenly w-[60vw] md:w-[70vw] mx-auto p-4 whitespace-normal text-center items-center">
                 <div className="flex flex-col gap-4">
-                  <h1 className="text-3xl font-bold text-zinc-50">{scholarship.name}</h1>
-                  <p className="text-zinc-50">{scholarship.description}</p>
+                  <h1 className="text-3xl font-bold text-indigo-500">{scholarship.name}</h1>
+                  <p className="text-zinc-950">{scholarship.description}</p>
                 </div>
-                <button className="bg-yellow-300 hover:bg-yellow-300/90 duration-300 text-zinc-900 focus:ring-1 ring-indigo-50 lg:min-w-fit px-3 py-3 rounded-lg shadow-md flex justify-center items-center gap-2 max-w-max font-semibold mt-8">
+                <button className="bg-indigo-300 hover:bg-indigo-300/90 duration-300 text-zinc-900 focus:ring-1 ring-indigo-50 lg:min-w-fit px-3 py-3 rounded-lg shadow-md flex justify-center items-center gap-2 max-w-max font-semibold mt-8">
                   Learn More
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

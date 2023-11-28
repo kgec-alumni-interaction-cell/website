@@ -8,7 +8,7 @@ import HomeNotices from "@/components/home/notices";
 export default function Home() {
   return (
     <Layout>
-      <section className="min-h-screen flex flex-col gap-32 bg-gradient-to-b from-violet-500 via-indigo-500 to-indigo-600 pb-6 md:pb-8 lg:pb-24">
+      <section className="min-h-screen flex flex-col gap-32 bg-zinc-50 pb-6 md:pb-8 lg:pb-24">
         <HomeHero />
         <HomeAbout />
         <HomeMNV />

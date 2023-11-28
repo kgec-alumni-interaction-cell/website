@@ -9,10 +9,10 @@ interface Props {
 function AlumniBase({ alumniList }: Props) {
   console.log(alumniList);
   return (
-    <section className="bg-gradient-to-b from-violet-500 via-indigo-500 to-indigo-600 min-w-full flex flex-col">
+    <section className="bg-white min-w-full flex flex-col">
       <div className="min-w-full flex flex-col gap-8 p-12 px-8 lg:p-24 h-full">
         <div className="w-full justify-center">
-          <h2 className="text-[2.5rem] text-yellow-300 lg:text-[3rem] font-black mb-7 leading-none">
+          <h2 className="text-[2.5rem] text-indigo-500 lg:text-[3rem] font-black mb-7 leading-none">
             Alumnibase
           </h2>
 
