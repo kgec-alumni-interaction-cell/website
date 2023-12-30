@@ -1,7 +1,33 @@
 import Layout from "@/components/layout";
 import Link from "next/link";
+import { FormEvent } from "react";
+
+interface FormType {
+  name: string;
+  email: string;
+  alumni: boolean;
+  gradYr: string;
+  proofOfGrad: string;
+  currWorkplace: string;
+  password: string;
+}
 
 function Register() {
+  async function onSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const formData = Object.fromEntries(new FormData(event.currentTarget));
+    let formObj: FormType = {} as FormType;
+    formObj = { ...formObj, ...formData }
+    if (formData.alumni) formObj.alumni = true; else formObj.alumni = false;
+    
+    const response = await fetch("/api/auth/register", {
+      method: "POST",
+      body: JSON.stringify(formData)
+    })
+
+    console.log(formObj)
+    console.log(response)
+  }
   return (
     <Layout>
       <section className="bg-gradient-to-b from-violet-500 via-indigo-500 to-indigo-600 min-w-full flex flex-col">
@@ -14,11 +40,14 @@ function Register() {
             </div>
 
             <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-              <form className="space-y-6" action="#" method="POST">
+              <form className="space-y-6" onSubmit={onSubmit}>
                 <div>
                   <label
                     htmlFor="name"
-                    className="block text-sm font-medium leading-6 text-yellow-300"
+                    className="block 
+                    Labels 9
+                    Milestones 0
+                    text-sm font-medium leading-6 text-yellow-300"
                   >
                     Name
                   </label>
@@ -47,53 +76,75 @@ function Register() {
                   </div>
                 </div>
 
-                <label className="block text-sm font-medium leading-6 text-yellow-300">
-                    <input type="checkbox" /> I am currently a student at KGEC
+                <div>
+                  <label
+                    htmlFor="password"
+                    className="block text-sm font-medium leading-6 text-yellow-300"
+                  >
+                    Password
                   </label>
+                  <div className="mt-2">
+                    <input
+                      name="password"
+                      type="password"
+                      required
+                      className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    />
+                  </div>
+                </div>
+
+                <label className="block text-sm font-medium leading-6 text-yellow-300">
+                  <input name="alumni" type="checkbox" /> I have graduated from
+                  KGEC
+                </label>
 
                 <div className="flex gap-2">
                   <div>
                     <label
-                      htmlFor="year"
+                      htmlFor="gradYr"
                       className="block text-sm font-medium leading-6 text-yellow-300"
                     >
                       Graduation Year
                     </label>
                     <input
-                      name="year"
+                      name="gradYr"
                       required
                       className="block w-28 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
                   </div>
 
-                  
-
-                  <div>
+                  <div className="w-full">
                     <label
-                      htmlFor="email"
+                      htmlFor="proofOfGrad"
                       className="block text-sm font-medium leading-6 text-yellow-300"
                     >
                       Proof of Graduation
                     </label>
                     <input
+                      name="proofOfGrad"
+                      placeholder="Enter drive link..."
+                      required
+                      className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    />
+                    {/* <input
                       type="file"
                       name="small-file-input"
                       id="small-file-input"
                       className="block w-full border border-gray-200 shadow-sm rounded-lg text-sm bg-zinc-50 focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none file:border-0 file:me-4 file:py-2 file:px-4"
-                    />
+                    /> */}
                   </div>
                 </div>
 
                 <div>
                   <label
-                    htmlFor="work"
+                    htmlFor="currWorkplace"
                     className="block text-sm font-medium leading-6 text-yellow-300"
                   >
                     Current Workplace
                   </label>
                   <div className="mt-2">
                     <input
-                      name="work"
+                      name="currWorkplace"
                       required
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
