@@ -71,7 +71,7 @@ function Login() {
               </div>
             ) : signedInUser && !signedInUser?.verified ? (
               <div className="mt-10 text-center text-xl leading-9 tracking-tight text-zinc-100">
-                Seems like you haven't been verified yet. Kindly have patience.
+                Seems like you haven&apos;t been verified yet. Kindly have patience.
               </div>
             ) :  (
               <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
