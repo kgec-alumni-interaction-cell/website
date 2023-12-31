@@ -6,20 +6,20 @@ import { useState } from "react";
 function Events() {
   const [ongoingEvents, setOngoingEvents] = useState([
     {
-      name: "Bing Chlling",
+      name: "Event 1",
       description: "Come and chill with bing.",
       image: "https://kgec.edu.in/web/assets/images/event1.jpg",
       link: "#",
     },
     {
-      name: "Bing Chlling",
+      name: "Event 2",
       description:
         "Every even should have four data points: a name, a description, an image and a link.",
       image: "https://kgec.edu.in/web/assets/images/event2.jpg",
       link: "#",
     },
     {
-      name: "Bing Chlling",
+      name: "Event 3",
       description:
         "All these events are stored as a state variable, which will be updated via the CMS.",
       image: "https://kgec.edu.in/web/assets/images/seminar1.PNG",
@@ -29,20 +29,20 @@ function Events() {
 
   const [upcomingEvents, setUpcomingEvents] = useState([
     {
-      name: "Bing Chlling",
+      name: "Event 4",
       description:
         "These are just weird sample events. I hardcoded them. Will be replaced.",
       image: "https://kgec.edu.in/web/assets/images/event1.jpg",
       link: "#",
     },
     {
-      name: "Bing Chlling",
+      name: "Event 5",
       description: "Don't show provide more than 3 of these. Please I beg.",
       image: "https://kgec.edu.in/web/assets/images/event2.jpg",
       link: "#",
     },
     {
-      name: "Bing Chlling",
+      name: "Event 6",
       description: "Still reading? Dang I didn't peg you for a reader.",
       image: "https://kgec.edu.in/web/assets/images/seminar1.PNG",
       link: "#",
@@ -51,21 +51,21 @@ function Events() {
 
   const [pastEvents, setPastEvents] = useState([
     {
-      name: "Bing Chlling",
+      name: "Event 7",
       description:
         "Let's talk about the images. They can basically be any size, but try to make it fit into this little cropped area that yopu can see on top.",
       image: "https://kgec.edu.in/web/assets/images/event1.jpg",
       link: "#",
     },
     {
-      name: "Bing Chlling",
+      name: "Event 8",
       description:
         "Every even should have four data points: a name, a description, an image and a link.",
       image: "https://kgec.edu.in/web/assets/images/event2.jpg",
       link: "#",
     },
     {
-      name: "Bing Chlling",
+      name: "Event 9",
       description:
         "Oh and one last thing, try not to make the descriptions of each of these events too big, otherwise it will be difficult to render the writing into this small space as you can clearly see. Make it EXACTLY the size of this piece of text.",
       image: "https://kgec.edu.in/web/assets/images/seminar1.PNG",
