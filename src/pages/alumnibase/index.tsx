@@ -2,7 +2,7 @@ import Layout from "@/components/layout";
 // import { useSession, signIn } from "next-auth/react";
 import AlumniBase from "./AlumniBase";
 import AlumniBaseInfo from "./AlumniBaseInfo";
-import Alumni from "@/types/types";
+import {Alumni, UserType} from "@/types/types";
 import { useEffect, useState } from "react";
 
 export async function getServerSideProps() {
@@ -30,27 +30,29 @@ interface Props {
 function AlumiBase({ alumniList }: Props) {
   // const { data: session } = useSession();
   // const session = 0
-  const [signedInUser, setSignedInUser] = useState<string>("");
+  
+  const [signedInUser, setSignedInUser] = useState<UserType>({} as UserType);
 
   useEffect(() => {
     if (typeof window !== "undefined")
-      if (window.localStorage.getItem("signed-in-user") !== null)
+      if (window.localStorage.getItem("signed-in-user") !== "")
         setSignedInUser(
-          window.localStorage.getItem("signed-in-user") as string
+          JSON.parse(window.localStorage.getItem("signed-in-user") as string)
         );
-
-    console.log(signedInUser)
   }, []);
 
-  // This is shown if not logged in
-  if (signedInUser === null)
+  useEffect(() => {
+    console.log(signedInUser);
+  }, [signedInUser]);
+
+  if (!signedInUser?.id)
     return (
       <Layout>
+        
         <AlumniBaseInfo />
       </Layout>
     );
-
-  if (signedInUser !== "")
+  else 
     return (
       <Layout>
         <AlumniBase alumniList={alumniList ? alumniList : ([] as Alumni[])} />

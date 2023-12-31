@@ -1,4 +1,4 @@
-import Alumni from "@/types/types";
+import { Alumni } from "@/types/types";
 import React from "react";
 
 interface Props {
