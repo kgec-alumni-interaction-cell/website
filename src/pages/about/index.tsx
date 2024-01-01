@@ -73,7 +73,39 @@ function About() {
             </div>
           )}
           {curentSidebarItem === 1 && (
-            <div className="text-zinc-950">Student Members</div>
+            <div>
+              <div className="text-2xl text-indigo-500 lg:text-3xl font-black mb-2">
+                Student Members
+              </div>
+              <ul className="list-disc pl-8">
+                <li>President: Shubhankar Das</li>
+                <li>Vice President: Subhadeep Sinha Roy</li>
+                <li>Joint Secretaries: Arbendu Pratihar and Samriddha Mitra</li>
+                <li>Treasurer - Priyanshu Mahato</li>
+                <li>Event Co-ordinator - Sneha Mukherjee</li>
+                <li>
+                  Outreach Co-ordinator - Arpita Biswas, Nur Ahamed, Rupantar
+                  Mandal, Moumita Sarkar
+                </li>
+                <li>
+                  Membership Co-ordinator - Akash Pramanik, Anal Hembram, Arpita
+                  Sarkar
+                </li>
+                <li>
+                  Mentorship Program Coordinator - Sudipta Tudu, Sarthak Jana,
+                  Shubhashis Paramanik
+                </li>
+                <li>
+                  Reunion Coordinator - Swagata Shaymal, Ajarul Miah, Moloy
+                  mandal,
+                </li>
+                <li>
+                  Alumni Relations Coordinator - Nashim Akram, Rekden Lama,
+                  Shubhadeep Das
+                </li>
+                <li>Volunteer Coordinator - Ananda Mohan Kar, Barsha Roy</li>
+              </ul>
+            </div>
           )}
           {curentSidebarItem === 2 && (
             <div>
@@ -226,9 +258,11 @@ function MobileDropDown({ onSelect }: { onSelect: (index: number) => void }) {
               <div
                 key={index}
                 className={`w-full h-12 flex items-center justify-start cursor-pointer text-zinc-50 rounded-lg`}
-                onClick={() => handleDropdownClick(
-                  index + (index >= selectedDropdownItem ? 1 : 0)
-                )}
+                onClick={() =>
+                  handleDropdownClick(
+                    index + (index >= selectedDropdownItem ? 1 : 0)
+                  )
+                }
               >
                 {item.name}
               </div>
