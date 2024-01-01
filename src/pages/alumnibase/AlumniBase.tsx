@@ -15,7 +15,6 @@ const DEPARTMENTS = [
   "Production Engineering",
   "Master of Computer Application",
 ];
-
 const DEGREES = ["B.Tech", "M.Tech", "MCA"];
 
 function AlumniBase({ alumniList }: Props) {
@@ -25,10 +24,10 @@ function AlumniBase({ alumniList }: Props) {
 
   const [searchQuery, setSearchQuery] = useState<string | null>(null);
 
-  const [filteredAlumniList, setFilteredAlumniList] =
-    useState<Alumni[]>(alumniList);
+  const [filteredAlumniList, setFilteredAlumniList] = useState<Alumni[]>(
+    alumniList || []
+  );
 
-  console.log(filteredAlumniList);
 
   const search = (query: string) => {
     setFilteredAlumniList(
@@ -208,16 +207,17 @@ function AlumniBase({ alumniList }: Props) {
               ))}
             </div>
           )}
-          {filteredAlumniList.length === 0 && (
-            <div className="flex flex-col gap-2 leading-none items-center justify-center">
-              <h2 className="text-2xl text-indigo-500 font-semibold">
-                No results found!
-              </h2>
-              <p className="text-lg text-gray-500">
-                Try changing the search query or filters
-              </p>
-            </div>
-          )}
+          {!filteredAlumniList ||
+            (filteredAlumniList.length === 0 && (
+              <div className="flex flex-col gap-2 leading-none items-center justify-center">
+                <h2 className="text-2xl text-indigo-500 font-semibold">
+                  No results found!
+                </h2>
+                <p className="text-lg text-gray-500">
+                  Try changing the search query or filters
+                </p>
+              </div>
+            ))}
         </div>
       </div>
     </section>
