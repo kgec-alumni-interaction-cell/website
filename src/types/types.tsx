@@ -1,11 +1,18 @@
 export interface Alumni {
-    id: string;
-    name: string;
-    image: string;
-    batch: string;
-    worksAt: string;
-    linkedinProfile: string;
-  };
+  id: string;
+  name: string;
+  email: string;
+  waNum: string;
+  linkedin: string;
+  degree: string;
+  department: string;
+  image: string;
+  alumni: boolean;
+  gradYr: number;
+  proofOfGrad: string;
+  verified: boolean;
+  currWorkplace: string;
+}
 
 export interface UserType {
   id: string;

@@ -12,6 +12,7 @@ function Login() {
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const formData = Object.fromEntries(new FormData(event.currentTarget));
+    console.log(formData);
     let formObj: FormType = {} as FormType;
     formObj.email = formData.email as string;
     formObj.password = formData.password as string;
@@ -56,86 +57,84 @@ function Login() {
 
   return (
     <Layout>
-      <section className="bg-gradient-to-b from-violet-500 via-indigo-500 to-indigo-600 min-w-full flex flex-col">
-        <div className="min-w-full flex flex-col gap-8 p-12 px-8 lg:p-24 h-full">
-          <div className="flex min-h-full flex-col justify-center px-6 pb-12 lg:px-8">
-            <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-              <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-yellow-300">
-                Log In to the KGEC Alumni Portal
-              </h2>
+      <section className="bg-white min-w-full flex justify-center w-full h-[calc(100vh-12px)]">
+        <div className="w-full overflow-y-auto flex flex-col justify-start items-center gap-8 p-12 px-8 lg:p-24 max-h-full">
+          <h2 className="text-[2.5rem] text-indigo-700 lg:text-[3rem] font-black mb-0 leading-none">
+            Log In to the KGEC Alumni Portal
+          </h2>
+
+          {signedInUser && signedInUser?.verified ? (
+            <div className="mt-10 text-center text-xl leading-9 tracking-tight text-zinc-100">
+              You&apos;re logged in! Check out our Alumnibase.
             </div>
-
-            {signedInUser && signedInUser?.verified ? (
-              <div className="mt-10 text-center text-xl leading-9 tracking-tight text-zinc-100">
-                You&apos;re logged in! Check out our Alumnibase.
-              </div>
-            ) : signedInUser && !signedInUser?.verified ? (
-              <div className="mt-10 text-center text-xl leading-9 tracking-tight text-zinc-100">
-                Seems like you haven&apos;t been verified yet. Kindly have patience.
-              </div>
-            ) :  (
-              <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-                <form className="space-y-6" onSubmit={onSubmit}>
-                  <div>
-                    <label
-                      htmlFor="name"
-                      className="block text-sm font-medium leading-6 text-yellow-300"
-                    >
-                      E-mail
-                    </label>
-                    <div className="mt-2">
-                      <input
-                        name="email"
-                        required
-                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className="flex items-center justify-between">
-                      <label
-                        htmlFor="password"
-                        className="block text-sm font-medium leading-6 text-yellow-300"
-                      >
-                        Password
-                      </label>
-                    </div>
-                    <div className="mt-2">
-                      <input
-                        id="password"
-                        name="password"
-                        type="password"
-                        autoComplete="current-password"
-                        required
-                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <button
-                      type="submit"
-                      className="flex w-full justify-center rounded-md bg-yellow-300 px-3 py-1.5 text-sm font-semibold leading-6 text-zinc-800 shadow-sm hover:bg-yellow-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                    >
-                      Sign in
-                    </button>
-                  </div>
-                </form>
-
-                <p className="mt-10 text-center text-sm text-white">
-                  Didn&apos;t register before?
-                  <Link
-                    href="/register"
-                    className="pl-1 font-semibold leading-6 text-yellow-300 hover:text-yellow-200"
+          ) : signedInUser && !signedInUser?.verified ? (
+            <div className="mt-10 text-center text-xl leading-9 tracking-tight text-zinc-100">
+              Seems like you haven&apos;t been verified yet. Kindly have
+              patience.
+            </div>
+          ) : (
+            <div className="w-full">
+              <form className="space-y-3" onSubmit={onSubmit}>
+                <div>
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium leading-6 text-gray-900"
                   >
-                    Register now!
-                  </Link>
-                </p>
-              </div>
-            )}
-          </div>
+                    Email
+                  </label>
+                  <div className="mt-1">
+                    <input
+                      name="email"
+                      required
+                      className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 outline-none focus:outline-none px-3 py-2"
+                      placeholder="Enter your email address"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex items-center justify-between">
+                    <label
+                      htmlFor="password"
+                      className="block text-sm font-medium leading-6 text-gray-900"
+                    >
+                      Password
+                    </label>
+                  </div>
+                  <div className="mt-1">
+                    <input
+                      id="password"
+                      name="password"
+                      type="password"
+                      autoComplete="current-password"
+                      required
+                      className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 outline-none focus:outline-none px-3 py-2"
+                      placeholder="Enter your password"
+                    />
+                  </div>
+                </div>
+
+                <button
+                  type="submit"
+                  className="flex w-full justify-center rounded-md bg-indigo-300 hover:bg-indigo-400/80 px-3 py-2 text-sm font-semibold leading-6 text-zinc-800 shadow-sm duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                >
+                  Sign in
+                </button>
+              </form>
+
+              <p className="mt-8 text-center text-sm text-gray-900">
+                Didn&apos;t register before?
+                <Link
+                  href="/register"
+                  className="pl-1 font-semibold leading-6 text-indigo-400 hover:text-indigo-500"
+                >
+                  Register now!
+                </Link>
+              </p>
+            </div>
+          )}
         </div>
+        <div className="w-full bg-[url('/old_campus.jpg')] bg-no-repeat bg-cover"></div>
       </section>
     </Layout>
   );

@@ -2,7 +2,7 @@ import Layout from "@/components/layout";
 // import { useSession, signIn } from "next-auth/react";
 import AlumniBase from "./AlumniBase";
 import AlumniBaseInfo from "./AlumniBaseInfo";
-import {Alumni, UserType} from "@/types/types";
+import { Alumni, UserType } from "@/types/types";
 import { useEffect, useState } from "react";
 
 export async function getServerSideProps() {
@@ -10,6 +10,7 @@ export async function getServerSideProps() {
     "https://kgec-alumni-backend.onrender.com/users/alumni"
   );
   const alumniList = await res.json();
+  console.log(alumniList);
   return {
     props: {
       alumniList,
@@ -30,7 +31,7 @@ interface Props {
 function AlumiBase({ alumniList }: Props) {
   // const { data: session } = useSession();
   // const session = 0
-  
+
   const [signedInUser, setSignedInUser] = useState<UserType>({} as UserType);
 
   useEffect(() => {
@@ -48,14 +49,19 @@ function AlumiBase({ alumniList }: Props) {
   if (!signedInUser?.id)
     return (
       <Layout>
-        
         <AlumniBaseInfo />
       </Layout>
     );
-  else 
+  else
     return (
       <Layout>
-        <AlumniBase alumniList={alumniList ? alumniList : ([] as Alumni[])} />
+        <AlumniBase
+          alumniList={
+            alumniList
+              ? alumniList.filter((alumni) => alumni.verified)
+              : ([] as Alumni[])
+          }
+        />
       </Layout>
     );
 }
