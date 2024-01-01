@@ -3,31 +3,17 @@ import Layout from "@/components/layout";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
-function Events() {
-  const [ongoingEvents, setOngoingEvents] = useState([
-    {
-      name: "Event 1",
-      description: "Come and chill with bing.",
-      image: "https://kgec.edu.in/web/assets/images/event1.jpg",
-      link: "#",
-    },
-    {
-      name: "Event 2",
-      description:
-        "Every even should have four data points: a name, a description, an image and a link.",
-      image: "https://kgec.edu.in/web/assets/images/event2.jpg",
-      link: "#",
-    },
-    {
-      name: "Event 3",
-      description:
-        "All these events are stored as a state variable, which will be updated via the CMS.",
-      image: "https://kgec.edu.in/web/assets/images/seminar1.PNG",
-      link: "#",
-    },
-  ]);
+interface EventType {
+  name: string;
+    description: string;
+    image: string;
+    link: string;
+}
 
-  const [upcomingEvents, setUpcomingEvents] = useState([
+function Events() {
+  const [ongoingEvents, setOngoingEvents] = useState<EventType[]>([]);
+
+  const [upcomingEvents, setUpcomingEvents] = useState<EventType[]>([
     {
       name: "Event 4",
       description:
@@ -41,37 +27,15 @@ function Events() {
       image: "https://kgec.edu.in/web/assets/images/event2.jpg",
       link: "#",
     },
-    {
-      name: "Event 6",
-      description: "Still reading? Dang I didn't peg you for a reader.",
-      image: "https://kgec.edu.in/web/assets/images/seminar1.PNG",
-      link: "#",
-    },
+    // {
+    //   name: "Event 6",
+    //   description: "Still reading? Dang I didn't peg you for a reader.",
+    //   image: "https://kgec.edu.in/web/assets/images/seminar1.PNG",
+    //   link: "#",
+    // },
   ]);
 
-  const [pastEvents, setPastEvents] = useState([
-    {
-      name: "Event 7",
-      description:
-        "Let's talk about the images. They can basically be any size, but try to make it fit into this little cropped area that yopu can see on top.",
-      image: "https://kgec.edu.in/web/assets/images/event1.jpg",
-      link: "#",
-    },
-    {
-      name: "Event 8",
-      description:
-        "Every even should have four data points: a name, a description, an image and a link.",
-      image: "https://kgec.edu.in/web/assets/images/event2.jpg",
-      link: "#",
-    },
-    {
-      name: "Event 9",
-      description:
-        "Oh and one last thing, try not to make the descriptions of each of these events too big, otherwise it will be difficult to render the writing into this small space as you can clearly see. Make it EXACTLY the size of this piece of text.",
-      image: "https://kgec.edu.in/web/assets/images/seminar1.PNG",
-      link: "#",
-    },
-  ]);
+  const [pastEvents, setPastEvents] = useState<EventType[]>([]);
 
   const router = useRouter();
 
@@ -91,6 +55,7 @@ function Events() {
           {/* eveyrthing will be done using map function, this is just a prototype */}
           <div className="flex flex-col bg-indigo-50 shadow-md rounded-lg w-full h-1/3 p-4 gap-4">
             <h2 className="font-bold text-2xl text-indigo-500">Ongoing Events</h2>
+            {ongoingEvents.length === 0 && <span className="">Currently no ongoing events! Stay tuned...</span>}
             <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4">
               {ongoingEvents.map((event, idx) => (
                 <div
@@ -132,6 +97,7 @@ function Events() {
           </div>
           <div className="flex flex-col bg-indigo-50 shadow-md rounded-lg w-full h-1/3 p-4 gap-4">
             <h2 className="font-bold text-2xl text-indigo-500">Upcoming Events</h2>
+            {upcomingEvents.length === 0 && <span className="">Currently no upcoming events! Stay tuned...</span>}
             <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4">
               {upcomingEvents.map((event, idx) => (
                 <div
@@ -173,6 +139,7 @@ function Events() {
           </div>
           <div className="flex flex-col bg-indigo-50 shadow-md rounded-lg w-full h-1/3 p-4 gap-4">
             <h2 className="font-semibold text-2xl text-indigo-500">Past Events</h2>
+            {pastEvents.length === 0 && <span className="">Currently no past events! Stay tuned...</span>}
             <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4">
               {pastEvents.map((event, idx) => (
                 <div
