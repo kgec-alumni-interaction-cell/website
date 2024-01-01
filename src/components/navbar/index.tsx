@@ -1,6 +1,8 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
 import MobileMenu from "./mobile";
+import { useState, useEffect } from "react";
+import type { UserType } from "@/types/types";
 
 export const navItems = [
   {
@@ -92,9 +94,18 @@ export const navItems = [
 
 export default function Navbar() {
   const router = useRouter();
+  const [signedInUser, setSignedInUser] = useState<UserType>({} as UserType);
+
+  useEffect(() => {
+    if (typeof window !== "undefined")
+      if (window.localStorage.getItem("signed-in-user") !== "")
+        setSignedInUser(
+          JSON.parse(window.localStorage.getItem("signed-in-user") as string)
+        );
+  }, []);
 
   return (
-    <nav className="h-[3.5rem] px-8 lg:px-24 py-2 bg-indigo-50 flex justify-between items-center sticky top-0 z-10 ">
+    <nav className="h-[3.5rem] px-8 lg:px-24 py-8 bg-indigo-50 flex justify-between items-center sticky top-0 z-10 ">
       <div className="flex items-center">
         <h2 className="font-bold">KGEC Alumni Asscoiation</h2>
       </div>
@@ -104,12 +115,34 @@ export default function Navbar() {
             href={item.path}
             key={item.name}
             className={`p-2 rounded-lg hover:bg-indigo-200/50 ${
-              router.pathname === item.path ? "text-indigo-500 font-semibold" : ""
+              router.pathname === item.path
+                ? "text-indigo-500 font-semibold"
+                : ""
             } cursor-pointer mx-2`}
           >
             {item.name}
           </Link>
         ))}
+        {signedInUser ? (
+          <button
+            onClick={() => {
+              if (typeof window !== "undefined") {
+                window.localStorage.removeItem("signed-in-user");
+                window.location.reload();
+              }
+            }}
+            className="bg-indigo-300 hover:bg-indigo-400 duration-300 text-zinc-900 focus:ring-1 ring-indigo-50 px-4 py-3 rounded-lg leading-none ease-out shadow-md max-w-max font-medium max-h-max"
+          >
+            Log Out
+          </button>
+        ) : (
+          <Link
+            href="/login"
+            className="bg-indigo-300 hover:bg-indigo-400 duration-300 text-zinc-900 focus:ring-1 ring-indigo-50 px-4 py-3 rounded-lg leading-none ease-out shadow-md max-w-max font-medium max-h-max"
+          >
+            Log In
+          </Link>
+        )}
       </div>
       <MobileMenu />
     </nav>
