@@ -51,7 +51,7 @@ function Register() {
       {
         method: "POST",
         body: formData,
-      }
+      },
     );
 
     const data = await response.json();
@@ -92,7 +92,7 @@ function Register() {
       {
         method: "POST",
         body: JSON.stringify(formObj),
-      }
+      },
     );
 
     console.log(response);
@@ -115,7 +115,7 @@ function Register() {
     if (typeof window !== "undefined")
       if (window.localStorage.getItem("signed-in-user") !== "")
         setSignedInUser(
-          window.localStorage.getItem("signed-in-user") as string
+          window.localStorage.getItem("signed-in-user") as string,
         );
   }, []);
 
@@ -126,18 +126,21 @@ function Register() {
           <h2 className="text-[2.5rem] text-indigo-700 lg:text-[3rem] font-black mb-0 leading-none">
             Register into the KGEC Alumni Portal
           </h2>
+          
+          <span className="leading-9 tracking-tight">Fill in the fields below and send your alumni or student application to be verified. The more accurate information you provide, the better the chances of being verified!</span>
+
 
           {signedInUser ? (
-            <div className="mt-10 text-center text-xl leading-9 tracking-tight text-zinc-100">
+            <div className="mt-10 text-center text-xl leading-9 tracking-tight">
               You are already signed in. Log out to register again
             </div>
           ) : registered ? (
-            <div className="mt-10 text-center text-xl leading-9 tracking-tight text-zinc-100">
+            <div className="mt-10 text-center text-xl leading-9 tracking-tight">
               Your application has been sent for verification! Once verified,
               you may{" "}
               <Link
                 href="/login"
-                className="pl-1 font-semibold leading-6 text-yellow-300 hover:text-yellow-200"
+                className="pl-1 font-semibold leading-6 text-sky-400 hover:text-sky-500"
               >
                 Log In
               </Link>{" "}
@@ -241,6 +244,7 @@ function Register() {
                   <div className="mt-1">
                     <input
                       name="linkedin"
+                      type="url"
                       required
                       className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 outline-none focus:outline-none px-3 py-2"
                       placeholder="Enter your LinkedIn profile URL"
@@ -281,7 +285,10 @@ function Register() {
                         onChange={(e) => setDegree(e.target.value)}
                         className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 outline-none focus:outline-none px-3 py-2"
                       >
+
+
                         {DEGREES.map((degree) => (
+
                           <option key={degree} value={degree}>
                             {degree}
                           </option>
@@ -305,10 +312,10 @@ function Register() {
                         {(degree === "B.Tech"
                           ? BTECH_DEPARTMENTS
                           : degree === "M.Tech"
-                          ? MTECH_DEPARTMENTS
-                          : degree === "MCA"
-                          ? MCA_DEPARTMENTS
-                          : []
+                            ? MTECH_DEPARTMENTS
+                            : degree === "MCA"
+                              ? MCA_DEPARTMENTS
+                              : []
                         ).map((dept) => (
                           <option key={dept} value={dept}>
                             {dept}
@@ -372,6 +379,7 @@ function Register() {
                       </label>
                       <input
                         name="proofOfGrad"
+                        type="url"
                         placeholder="Enter Google Drive link ONLY..."
                         required
                         value={proofOfGrad}
@@ -473,7 +481,7 @@ function Register() {
             </div>
           )}
         </div>
-        <div className="w-full bg-[url('/old_campus.jpg')] bg-no-repeat bg-cover"></div>
+        <div className="hidden md:block w-full bg-[url('/old_campus.jpg')] bg-no-repeat bg-cover"></div>
       </section>
     </Layout>
   );

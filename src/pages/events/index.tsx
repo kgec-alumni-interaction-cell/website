@@ -14,19 +14,6 @@ function Events() {
   const [ongoingEvents, setOngoingEvents] = useState<EventType[]>([]);
 
   const [upcomingEvents, setUpcomingEvents] = useState<EventType[]>([
-    {
-      name: "Event 4",
-      description:
-        "These are just weird sample events. I hardcoded them. Will be replaced.",
-      image: "https://kgec.edu.in/web/assets/images/event1.jpg",
-      link: "#",
-    },
-    {
-      name: "Event 5",
-      description: "Don't show provide more than 3 of these. Please I beg.",
-      image: "https://kgec.edu.in/web/assets/images/event2.jpg",
-      link: "#",
-    },
     // {
     //   name: "Event 6",
     //   description: "Still reading? Dang I didn't peg you for a reader.",

@@ -9,6 +9,8 @@ interface FormType {
 }
 
 function Login() {
+  const [errorMessage, setErrorMessage] = useState<string>("");
+
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const formData = Object.fromEntries(new FormData(event.currentTarget));
@@ -24,7 +26,7 @@ function Login() {
       {
         method: "POST",
         body: JSON.stringify(formObj),
-      }
+      },
     );
 
     // console.log(await response.json());
@@ -36,6 +38,8 @@ function Login() {
         localStorage.setItem("signed-in-user", JSON.stringify(user));
         window.location.reload();
       }
+    } else {
+      setErrorMessage(await response.text());
     }
   }
 
@@ -46,8 +50,8 @@ function Login() {
       if (window.localStorage.getItem("signed-in-user") !== "")
         setSignedInUser(
           JSON.parse(
-            window.localStorage.getItem("signed-in-user") as string
-          ) as UserType
+            window.localStorage.getItem("signed-in-user") as string,
+          ) as UserType,
         );
   }, []);
 
@@ -63,12 +67,48 @@ function Login() {
             Log In to the KGEC Alumni Portal
           </h2>
 
+          {errorMessage !== "" ? (
+            <div
+              className="max-w-xs bg-red-500 text-sm text-white rounded-xl shadow-lg"
+              role="alert"
+            >
+              <div className="flex p-4">
+                {errorMessage}
+                <div className="ms-auto">
+                  <button
+                    type="button"
+                    className="inline-flex flex-shrink-0 justify-center items-center h-5 w-5 rounded-lg text-white hover:text-white opacity-50 hover:opacity-100 focus:outline-none focus:opacity-100"
+                  >
+                    <span className="sr-only">Close</span>
+                    <svg
+                      className="flex-shrink-0 w-4 h-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M18 6 6 18" />
+                      <path d="m6 6 12 12" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <></>
+          )}
+
           {signedInUser && signedInUser?.verified ? (
-            <div className="mt-10 text-center text-xl leading-9 tracking-tight text-zinc-100">
+            <div className="mt-10 text-center text-xl leading-9 tracking-tight">
               You&apos;re logged in! Check out our Alumnibase.
             </div>
           ) : signedInUser && !signedInUser?.verified ? (
-            <div className="mt-10 text-center text-xl leading-9 tracking-tight text-zinc-100">
+            <div className="mt-10 text-center text-xl leading-9 tracking-tight">
               Seems like you haven&apos;t been verified yet. Kindly have
               patience.
             </div>
@@ -134,7 +174,7 @@ function Login() {
             </div>
           )}
         </div>
-        <div className="w-full bg-[url('/old_campus.jpg')] bg-no-repeat bg-cover"></div>
+        <div className="hidden md:block w-full bg-[url('/old_campus.jpg')] bg-no-repeat bg-cover"></div>
       </section>
     </Layout>
   );
