@@ -7,11 +7,11 @@ import { Alumni, UserType } from "@/types/types";
 
 export async function getServerSideProps() {
   const result_alumnis = await fetch(
-    "https://kgec-alumni-backend.onrender.com/users/alumni"
+    "https://kgec-alumni-backend.onrender.com/users/alumni",
   );
   const alumnis = await result_alumnis.json();
   const result_students = await fetch(
-    "https://kgec-alumni-backend.onrender.com/users/students"
+    "https://kgec-alumni-backend.onrender.com/users/students",
   );
   const students = await result_students.json();
   return {
@@ -30,6 +30,11 @@ interface Props {
 function Verify({ alumnis, students }: Props) {
   const [selectedTab, setSelectedTab] = useState<string>("student");
   const [token, setToken] = useState<string>("");
+
+  useEffect(() => {
+    if (typeof window !== "undefined")
+      setToken(window.localStorage.getItem("alumni-admin-token") as string);
+  }, []);
 
   return (
     <Layout>
@@ -150,7 +155,7 @@ function Verify({ alumnis, students }: Props) {
                               id: user.id,
                               token: token,
                             }),
-                          }
+                          },
                         );
 
                         window.location.reload();
@@ -176,9 +181,9 @@ function Verify({ alumnis, students }: Props) {
                             method: "POST",
                             body: JSON.stringify({
                               id: user.id,
-                              token: token
+                              token: token,
                             }),
-                          }
+                          },
                         );
 
                         window.location.reload();
