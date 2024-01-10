@@ -2,7 +2,7 @@ import Layout from "@/components/layout";
 import Slide from "@/components/slideshow/Slide";
 import Slideshow from "@/components/slideshow/Slideshow";
 
-interface Scholarship {
+export interface Scholarship {
   name: string;
   description: string;
   link: string;
