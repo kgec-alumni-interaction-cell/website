@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useEffect } from "react";
 
 function Authenticator({
   token,
@@ -7,9 +7,15 @@ function Authenticator({
   token: string;
   setToken: Dispatch<SetStateAction<string>>;
 }) {
+  useEffect(() => {
+    if (typeof window !== "undefined")
+      setToken(window.localStorage.getItem("alumni-admin-token") as string);
+  }, []);
+
   return (
-    <div className="flex w-full px-10 items-center py-5 gap-3">
+    <div className="flex flex-col md:flex-row justify-start items-start w-full py-5 gap-3">
       <input
+        name="token"
         type="text"
         value={token}
         onChange={(e) => setToken(e.target.value)}

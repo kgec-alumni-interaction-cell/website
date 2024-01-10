@@ -42,7 +42,9 @@ function Verify({ alumnis, students }: Props) {
       <h2 className="text-[2.5rem] px-10 text-indigo-500 lg:text-[3rem] font-black mb-0 leading-none">
         Verification Dashboard
       </h2>
-      <Authenticator token={token} setToken={setToken} />
+      <div className="px-10">
+        <Authenticator token={token} setToken={setToken} />
+      </div>
       <ul className="grid grid-cols-2 gap-0 text-base font-medium text-center text-gray-500 border-gray-200 dark:border-gray-700 dark:text-gray-400">
         <li className="">
           <button
