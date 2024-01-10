@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 function Footer() {
   return (
     <footer className="bg-indigo-50 min-w-full min-h-[16vh] max-h-auto flex flex-col-reverse gap-8 justify-start px-6 md:px-8 lg:px-24 py-6">
@@ -6,37 +8,37 @@ function Footer() {
       </p>
       <div className="flex flex-col lg:flex-row justify-between gap-8">
         <div className="flex flex-col lg:flex-row gap-4 lg:gap-8">
-          <a
-            href=""
+          <Link
+            href="/"
             className="text-zinc-950 hover:text-zinc-800/80 duration-200 font-semibold"
           >
             Home
-          </a>
-          <a
-            href=""
+          </Link>
+          <Link
+            href="/about"
             className="text-zinc-950 hover:text-zinc-800/80 duration-200 font-semibold"
           >
-            About Us
-          </a>
-          <a
-            href=""
+            About 
+          </Link>
+          <Link
+            href="/events"
             className="text-zinc-950 hover:text-zinc-800/80 duration-200 font-semibold"
           >
             Events
-          </a>
-          <a
-            href=""
+          </Link>
+          <Link
+            href="/scholarships"
             className="text-zinc-950 hover:text-zinc-800/80 duration-200 font-semibold"
           >
             Scholariships
-          </a>
-          <a
-            href=""
+          </Link>
+          <Link
+            href="/alumnibase"
             className="text-zinc-950 hover:text-zinc-800/80 duration-200 font-semibold"
           >
             {" "}
             Alumni Base
-          </a>
+          </Link>
         </div>
         <div className="flex divide-x divide-zinc-700 gap-6">
           <a
