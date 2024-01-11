@@ -144,6 +144,10 @@ function Verify({ alumnis, students }: Props) {
                           },
                         );
 
+                        const data = await response.json();
+
+                        console.log(data);
+
                         window.location.reload();
                       }}
                       type="button"

@@ -40,6 +40,7 @@ const MCA_DEPARTMENTS = ["Master of Computer Application"];
 
 function Register() {
   const [registered, setRegistered] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const uploadImage = async (image: File, name: string) => {
     const formData = new FormData();
@@ -51,7 +52,7 @@ function Register() {
       {
         method: "POST",
         body: formData,
-      },
+      }
     );
 
     const data = await response.json();
@@ -66,6 +67,7 @@ function Register() {
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    setLoading(true);
     const formData = Object.fromEntries(new FormData(event.currentTarget));
     const imageURL = await uploadImage(avatar!, formData.name as string);
     console.log(formData);
@@ -92,7 +94,7 @@ function Register() {
       {
         method: "POST",
         body: JSON.stringify(formObj),
-      },
+      }
     );
 
     console.log(response);
@@ -100,8 +102,11 @@ function Register() {
     if (response.status === 200) {
       if (typeof window !== "undefined") {
         setRegistered(true);
+        setLoading(false);
       }
     }
+
+    setLoading(false);
   }
 
   const [graduated, setGraduated] = useState<boolean>(false);
@@ -115,7 +120,7 @@ function Register() {
     if (typeof window !== "undefined")
       if (window.localStorage.getItem("signed-in-user") !== "")
         setSignedInUser(
-          window.localStorage.getItem("signed-in-user") as string,
+          window.localStorage.getItem("signed-in-user") as string
         );
   }, []);
 
@@ -126,9 +131,12 @@ function Register() {
           <h2 className="text-[2.5rem] text-indigo-700 lg:text-[3rem] font-black mb-0 leading-none">
             Register into the KGEC Alumni Portal
           </h2>
-          
-          <span className="leading-9 tracking-tight">Fill in the fields below and send your alumni or student application to be verified. The more accurate information you provide, the better the chances of being verified!</span>
 
+          <span className="leading-9 tracking-tight">
+            Fill in the fields below and send your alumni or student application
+            to be verified. The more accurate information you provide, the
+            better the chances of being verified!
+          </span>
 
           {signedInUser ? (
             <div className="mt-10 text-center text-xl leading-9 tracking-tight">
@@ -285,10 +293,7 @@ function Register() {
                         onChange={(e) => setDegree(e.target.value)}
                         className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 outline-none focus:outline-none px-3 py-2"
                       >
-
-
                         {DEGREES.map((degree) => (
-
                           <option key={degree} value={degree}>
                             {degree}
                           </option>
@@ -312,10 +317,10 @@ function Register() {
                         {(degree === "B.Tech"
                           ? BTECH_DEPARTMENTS
                           : degree === "M.Tech"
-                            ? MTECH_DEPARTMENTS
-                            : degree === "MCA"
-                              ? MCA_DEPARTMENTS
-                              : []
+                          ? MTECH_DEPARTMENTS
+                          : degree === "MCA"
+                          ? MCA_DEPARTMENTS
+                          : []
                         ).map((dept) => (
                           <option key={dept} value={dept}>
                             {dept}
@@ -452,10 +457,10 @@ function Register() {
                 <div>
                   <button
                     type="submit"
-                    disabled={proofOfGrad === ""}
-                    className="flex w-full justify-center rounded-md bg-indigo-300 hover:bg-indigo-400/80 px-3 py-2 text-sm font-semibold leading-6 text-zinc-800 shadow-sm duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    disabled={proofOfGrad === "" || loading}
+                    className="flex w-full justify-center rounded-md bg-indigo-300 hover:bg-indigo-400/80 px-3 py-2 text-sm font-semibold leading-6 text-zinc-800 shadow-sm duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Submit for Verification
+                    {loading ? "Submitting..." : "Submit for Verification"}
                   </button>
                 </div>
               </form>
