@@ -10,9 +10,11 @@ interface FormType {
 
 function Login() {
   const [errorMessage, setErrorMessage] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    setLoading(true);
     const formData = Object.fromEntries(new FormData(event.currentTarget));
     console.log(formData);
     let formObj: FormType = {} as FormType;
@@ -33,6 +35,7 @@ function Login() {
 
     if (response.status === 200) {
       const user = await response.json();
+      setLoading(false);
       console.log(user);
       if (typeof window !== "undefined") {
         localStorage.setItem("signed-in-user", JSON.stringify(user));
@@ -40,6 +43,7 @@ function Login() {
       }
     } else {
       setErrorMessage(await response.text());
+      setLoading(false);
     }
   }
 
@@ -156,7 +160,8 @@ function Login() {
 
                 <button
                   type="submit"
-                  className="flex w-full justify-center rounded-md bg-indigo-300 hover:bg-indigo-400/80 px-3 py-2 text-sm font-semibold leading-6 text-zinc-800 shadow-sm duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  disabled={loading}
+                  className="flex w-full justify-center rounded-md bg-indigo-300 hover:bg-indigo-400/80 px-3 py-2 text-sm font-semibold leading-6 text-zinc-800 shadow-sm duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   Sign in
                 </button>
