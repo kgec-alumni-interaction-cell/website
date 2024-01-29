@@ -14,7 +14,7 @@ const formatDisplayNumber = (num: number) => {
 export default function HomeHero() {
   //  Ideally these values should be fetched from a CMS or DB, I made them states just in case.
   //  The last two are formatted based upon their values, it's nothing but an aesthetic choice.
-  const [numBatches, setNumBatches] = useState<number>(20);
+  const [numBatches, setNumBatches] = useState<number>(25);
   const [numStudents, setNumStudents] = useState<number>(5437);
   const [numCompanies, setNumCompanies] = useState<number>(53);
 

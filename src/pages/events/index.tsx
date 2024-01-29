@@ -22,7 +22,27 @@ function Events() {
     // },
   ]);
 
-  const [pastEvents, setPastEvents] = useState<EventType[]>([]);
+  const [pastEvents, setPastEvents] = useState<EventType[]>([
+
+    {
+      name: "Mentorship Program",
+      description: "From 31st October, 2023",
+      image: "https://kgec.edu.in/web/assets/images/event1.jpg",
+      link: "#",
+    },
+    {
+      name: "Mock Interview Sessions exclusively for 4th years",
+      description: "From 17th July, 2023",
+      image: "https://kgec.edu.in/web/assets/images/event1.jpg",
+      link: "#",
+    },
+    {
+      name: "New appointments within the Alumni Interaction Cell of KGEC",
+      description: "From 10th July, 2023",
+      image: "https://kgec.edu.in/web/assets/images/event1.jpg",
+      link: "#",
+    },
+  ]);
 
   const router = useRouter();
 
