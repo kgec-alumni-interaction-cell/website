@@ -14,20 +14,23 @@ export default function HomeContact() {
         </p>
         <ul className="list-disc ml-6 my-7 text-lg font-semibold marker:text-zinc-950">
           <li className="">
-            <span className="text-zinc-950 py-2 px-3">
-              Shubhankar Das (+91 9064632186)
+            <span className="text-zinc-950 py-4 px-3">
+              Shubhankar Das 
             </span>
           </li>
+          <span className="px-3">+91 9064632186</span>
+          <li className="">
+            <span className="text-zinc-950 py-4 px-3">
+              Arbendu Pratihar 
+            </span>
+          </li>
+          <span className="px-3">+91 8597058785</span>
           <li className="">
             <span className="text-zinc-950 py-2 px-3">
-              Arbendu Pratihar (+91 8597058785)
+              Samridhdha Mitra 
             </span>
           </li>
-          <li className="">
-            <span className="text-zinc-950 py-2 px-3">
-              Samridhdha Milia (+91 9804443065)
-            </span>
-          </li>
+          <span className="px-3">+91 9804443065</span>
         </ul>
         <p className="text-zinc-950 text-lg">
           As an alumnus of KGEC, you are automatically part of our community. We

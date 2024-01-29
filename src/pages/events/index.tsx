@@ -5,9 +5,9 @@ import { useState } from "react";
 
 interface EventType {
   name: string;
-    description: string;
-    image: string;
-    link: string;
+  description: string;
+  image: string;
+  link: string;
 }
 
 function Events() {
@@ -22,7 +22,27 @@ function Events() {
     // },
   ]);
 
-  const [pastEvents, setPastEvents] = useState<EventType[]>([]);
+  const [pastEvents, setPastEvents] = useState<EventType[]>([
+
+    {
+      name: "Mentorship Program",
+      description: "From 31st October, 2023",
+      image: "https://kgec.edu.in/web/assets/images/event1.jpg",
+      link: "#",
+    },
+    {
+      name: "Mock Interview Sessions exclusively for 4th years",
+      description: "From 17th July, 2023",
+      image: "https://kgec.edu.in/web/assets/images/event1.jpg",
+      link: "#",
+    },
+    {
+      name: "New appointments within the Alumni Interaction Cell of KGEC",
+      description: "From 10th July, 2023",
+      image: "https://kgec.edu.in/web/assets/images/event1.jpg",
+      link: "#",
+    },
+  ]);
 
   const router = useRouter();
 
@@ -41,8 +61,14 @@ function Events() {
           </div>
           {/* eveyrthing will be done using map function, this is just a prototype */}
           <div className="flex flex-col bg-indigo-50 shadow-md rounded-lg w-full h-1/3 p-4 gap-4">
-            <h2 className="font-bold text-2xl text-indigo-500">Ongoing Events</h2>
-            {ongoingEvents.length === 0 && <span className="">Currently no ongoing events! Stay tuned...</span>}
+            <h2 className="font-bold text-2xl text-indigo-500">
+              Ongoing Events
+            </h2>
+            {ongoingEvents.length === 0 && (
+              <span className="">
+                Currently no ongoing events! Stay tuned...
+              </span>
+            )}
             <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4">
               {ongoingEvents.map((event, idx) => (
                 <div
@@ -83,8 +109,14 @@ function Events() {
             </div>
           </div>
           <div className="flex flex-col bg-indigo-50 shadow-md rounded-lg w-full h-1/3 p-4 gap-4">
-            <h2 className="font-bold text-2xl text-indigo-500">Upcoming Events</h2>
-            {upcomingEvents.length === 0 && <span className="">Currently no upcoming events! Stay tuned...</span>}
+            <h2 className="font-bold text-2xl text-indigo-500">
+              Upcoming Events
+            </h2>
+            {upcomingEvents.length === 0 && (
+              <span className="">
+                Currently no upcoming events! Stay tuned...
+              </span>
+            )}
             <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4">
               {upcomingEvents.map((event, idx) => (
                 <div
@@ -125,8 +157,12 @@ function Events() {
             </div>
           </div>
           <div className="flex flex-col bg-indigo-50 shadow-md rounded-lg w-full h-1/3 p-4 gap-4">
-            <h2 className="font-semibold text-2xl text-indigo-500">Past Events</h2>
-            {pastEvents.length === 0 && <span className="">Currently no past events! Stay tuned...</span>}
+            <h2 className="font-semibold text-2xl text-indigo-500">
+              Past Events
+            </h2>
+            {pastEvents.length === 0 && (
+              <span className="">Currently no past events! Stay tuned...</span>
+            )}
             <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4">
               {pastEvents.map((event, idx) => (
                 <div
