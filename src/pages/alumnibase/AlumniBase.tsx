@@ -50,7 +50,9 @@ function AlumniBase({ alumniList }: Props) {
         setSignedInUser(
           JSON.parse(window.localStorage.getItem("signed-in-user") as string)
         );
-  }, []);
+
+    console.log(filteredAlumniList)
+  }, [filteredAlumniList]);
 
   return (
     <section className="bg-white min-w-full flex flex-col min-h-screen">

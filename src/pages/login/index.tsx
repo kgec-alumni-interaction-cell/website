@@ -24,7 +24,7 @@ function Login() {
     console.log(formObj);
 
     const response = await fetch(
-      "https://kgec-alumni-backend.onrender.com/users/login",
+      `${process.env.NEXT_PUBLIC_API_ROUTE}/users/login`,
       {
         method: "POST",
         body: JSON.stringify(formObj),
