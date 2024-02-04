@@ -6,7 +6,7 @@ export default function HomeContact() {
           Contact Us
         </h2>
         <p className="text-lg text-zinc-950">
-          Have questions or want to get in touch with the Alumni Association? We
+          Have questions or want to get in touch with the KGEC Alumni Interaction Cell? We
           are here to help!
         </p>
         <p className="text-lg text-zinc-950">

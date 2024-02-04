@@ -11,7 +11,7 @@ function AlumniBaseInfo() {
             Alumni Base
           </h2>
           <p className=" text-zinc-950">
-            Join the KGEC Alumni Association to stay connected with a vast
+            Join the KGEC Alumni Interaction Cell to stay connected with a vast
             network of successful graduates from diverse fields.
           </p>
         </div>
