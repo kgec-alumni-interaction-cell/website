@@ -31,7 +31,7 @@ function Layout({ children }: Props) {
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
 
-        <title>KGEC Alumni Association Website</title>
+        <title>KGEC Alumni Interaction Cell Website</title>
       </Head>
       <main className="min-h-screen min-w-screen flex flex-col ">
         <Navbar />

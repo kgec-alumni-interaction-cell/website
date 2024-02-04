@@ -56,7 +56,7 @@ function Events() {
             </h2>
             <p className="text-lg text-zinc-950">
               Details about upcoming, ongoing and past events from the KGEC
-              Alumni Association.
+              Alumni Interaction Cell.
             </p>
           </div>
           {/* eveyrthing will be done using map function, this is just a prototype */}

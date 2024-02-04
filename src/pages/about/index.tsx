@@ -34,7 +34,7 @@ function About() {
               <h2 className="text-[2.5rem] lg:text-[3rem] font-black text-indigo-500 mb-2 leading-none">
                 About Us
               </h2>
-              Our association is a beacon of unity and camaraderie, bringing
+              Our cell is a beacon of unity and camaraderie, bringing
               together graduates from diverse disciplines and generations. We
               take immense pride in our shared experiences, accomplishments, and
               the values instilled in us during our time at KGEC.
@@ -114,16 +114,16 @@ function About() {
               </h2>
               <p className="text-zinc-950">
                 “As the President of the Kalyani Government Engineering College
-                Alumni Association and a current student at KGEC, it is an honor
+                Alumni Interaction Cell and a current student at KGEC, it is an honor
                 to extend my warm greetings to all our esteemed alumni. Our
                 college takes immense pride in its alumni, and we are thrilled
                 to create this platform that fosters strong connections between
-                current students and graduates. The KGEC Alumni Association
+                current students and graduates. The KGEC Alumni Interaction Cell
                 serves as a bridge that connects the past, present, and future
                 of our institution. Our mission is to celebrate the achievements
                 of our alumni, provide guidance and mentorship to current
                 students, and actively contribute to the college's growth and
-                development. As a student-led association, we are dedicated to
+                development. As a student-led cell, we are dedicated to
                 creating engaging events, workshops, and initiatives that
                 promote knowledge exchange and networking. I encourage all
                 alumni to actively participate in our activities and share their
@@ -142,12 +142,12 @@ function About() {
               </h2>
               <p className="text-zinc-950">
                 “I am delighted to address everyone as the Vice-President of the
-                Kalyani Government Engineering College Alumni Association and a
+                Kalyani Government Engineering College Alumni Interaction Cell and a
                 current student at KGEC. Our college is not just a place of
                 learning but also a close-knit community that fosters lifelong
-                bonds among its students. As an association of current students,
+                bonds among its students. As a cell of current students,
                 we are committed to maintaining strong ties with our esteemed
-                alumni. The KGEC Alumni Association aims to provide a supportive
+                alumni. The KGEC Alumni Interaction Cell aims to provide a supportive
                 platform for networking, mentorship, and career guidance.
                 Through various events, we hope to bring together current
                 students and graduates, creating opportunities for meaningful
@@ -168,7 +168,7 @@ function About() {
                 Message from the Joint Secretaries
               </h2>
               <p className="text-zinc-950">
-                “The KGEC Alumni Association aims to bridge the gap between
+                “The KGEC Alumni Interaction Cell aims to bridge the gap between
                 current students and graduates, fostering connections that last
                 beyond graduation. We are dedicated to organizing events and
                 activities that enable current students to interact with alumni,

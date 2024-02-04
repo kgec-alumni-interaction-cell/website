@@ -10,17 +10,17 @@ export default function HomeAbout() {
       </h2>
 
       <p className="text-lg text-zinc-950">
-        The Kalyani Government Engineering College Alumni Association is a
+        The Kalyani Government Engineering College Alumni Interaction Cell is a
         dynamic and thriving community of distinguished individuals who once
         graced the halls of Kalyani Government Engineering College (KGEC). As
         proud graduates, we are united by the shared experiences and memories of
-        our time at KGEC. Our association aims to foster lifelong connections
+        our time at KGEC. Our cell aims to foster lifelong connections
         among alumni, promote professional growth, and contribute to the
         development of our beloved alma mater.
       </p>
 
       <p className="mt-3 text-lg text-zinc-950">
-        Our association is a beacon of unity and camaraderie, bringing together
+        Our cell is a beacon of unity and camaraderie, bringing together
         graduates from diverse disciplines and generations. We take immense
         pride in our shared experiences, accomplishments, and the values
         instilled in us during our time at KGEC.

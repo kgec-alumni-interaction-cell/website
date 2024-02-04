@@ -28,7 +28,7 @@ export default function HomeHero() {
             Kalyani Government Engineering College
           </h3>
           <h2 className="text-[2.5rem] lg:text-[4rem] leading-[1] font-black m-0 bg-gradient-to-b from-violet-400 via-indigo-400 to-indigo-500 text-transparent bg-clip-text my-2 lg:my-0">
-            Alumni Association
+            Alumni Interaction Cell
           </h2>
           <p className="text-lg mb-8 text-zinc-100">
             Building lifelong connections and friendships
