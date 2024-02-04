@@ -8,11 +8,11 @@ import Authenticator from "@/components/authenticator";
 
 export async function getServerSideProps() {
   const result_alumnis = await fetch(
-    "https://kgec-alumni-backend.onrender.com/users/alumni"
+    `${process.env.NEXT_PUBLIC_API_ROUTE}/users/alumni`
   );
   const alumnis = await result_alumnis.json();
   const result_students = await fetch(
-    "https://kgec-alumni-backend.onrender.com/users/students"
+    `${process.env.NEXT_PUBLIC_API_ROUTE}/users/students`
   );
   const students = await result_students.json();
   return {
@@ -134,7 +134,7 @@ function Verify({ alumnis, students }: Props) {
                     <button
                       onClick={async () => {
                         const response = await fetch(
-                          "https://kgec-alumni-backend.onrender.com/users/verify",
+                          `${process.env.NEXT_PUBLIC_API_ROUTE}/users/verify`,
                           {
                             method: "POST",
                             body: JSON.stringify({
@@ -166,7 +166,7 @@ function Verify({ alumnis, students }: Props) {
                     <button
                       onClick={async () => {
                         const response = await fetch(
-                          "https://kgec-alumni-backend.onrender.com/users/delete",
+                          `${process.env.NEXT_PUBLIC_API_ROUTE}/users/delete`,
                           {
                             method: "POST",
                             body: JSON.stringify({
