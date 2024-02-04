@@ -90,7 +90,7 @@ function Register() {
     console.log(formObj);
 
     const response = await fetch(
-      "https://kgec-alumni-backend.onrender.com/users/register",
+      `${process.env.NEXT_PUBLIC_API_ROUTE}/users/register`,
       {
         method: "POST",
         body: JSON.stringify(formObj),

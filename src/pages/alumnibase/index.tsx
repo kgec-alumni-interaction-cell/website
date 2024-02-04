@@ -4,35 +4,44 @@ import AlumniBase from "./AlumniBase";
 import AlumniBaseInfo from "./AlumniBaseInfo";
 import { Alumni, UserType } from "@/types/types";
 import { useEffect, useState } from "react";
+import useSWR from "swr";
 
-export async function getServerSideProps() {
-  const res = await fetch(
-    "https://kgec-alumni-backend.onrender.com/users/alumni"
-  );
-  const alumniList = await res.json();
-  console.log(alumniList);
-  return {
-    props: {
-      alumniList,
-    },
-  };
-}
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
-interface Props {
-  alumniList: Alumni[];
-}
-// const [signedInUser, setSignedInUser] = useState<string>(
-//   (typeof window !== "undefined" &&
-//   window.localStorage.getItem("signed-in-user")
-//     ? window.localStorage.getItem("signed-in-user")
-//     : "") as string
-// );
+// export async function getServerSideProps() {
+//   const res = await fetch(
+//     "https://kgec-alumni-backend.onrender.com/users/alumni"
+//   );
 
-function AlumiBase({ alumniList }: Props) {
+//   const alumniList = await res.json();
+//   console.log(alumniList);
+//   return {
+//     props: {
+//       alumniList,
+//     },
+//   };
+// }
+
+// interface Props {
+//   alumniList: Alumni[];
+// }
+// // const [signedInUser, setSignedInUser] = useState<string>(
+// //   (typeof window !== "undefined" &&
+// //   window.localStorage.getItem("signed-in-user")
+// //     ? window.localStorage.getItem("signed-in-user")
+// //     : "") as string
+// // );
+
+function AlumiBase() {
   // const { data: session } = useSession();
   // const session = 0
 
   const [signedInUser, setSignedInUser] = useState<UserType>({} as UserType);
+  const { data, error, isLoading } = useSWR<Alumni[]>(
+    `${process.env.NEXT_PUBLIC_API_ROUTE}/users/alumni`,
+    fetcher
+  );
+  const [alumniList, setAlumniList] = useState<Alumni[]>(data as Alumni[]);
 
   useEffect(() => {
     if (typeof window !== "undefined")
@@ -43,8 +52,8 @@ function AlumiBase({ alumniList }: Props) {
   }, []);
 
   useEffect(() => {
-    console.log(signedInUser);
-  }, [signedInUser]);
+    setAlumniList(data as Alumni[]);
+  }, [data]);
 
   if (!signedInUser?.id)
     return (
