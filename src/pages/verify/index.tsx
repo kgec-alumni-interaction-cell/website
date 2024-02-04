@@ -8,11 +8,11 @@ import Authenticator from "@/components/authenticator";
 
 export async function getServerSideProps() {
   const result_alumnis = await fetch(
-    "https://kgec-alumni-backend.onrender.com/users/alumni",
+    "https://kgec-alumni-backend.onrender.com/users/alumni"
   );
   const alumnis = await result_alumnis.json();
   const result_students = await fetch(
-    "https://kgec-alumni-backend.onrender.com/users/students",
+    "https://kgec-alumni-backend.onrender.com/users/students"
   );
   const students = await result_students.json();
   return {
@@ -100,7 +100,7 @@ function Verify({ alumnis, students }: Props) {
                   >
                     {user.id}
                   </td>
-                  <td className="px-6 py-4 flex">
+                  <td className="px-6 py-4 flex flex-col lg:flex-row gap-4">
                     <div className="mr-4">
                       <Image
                         src={user.image}
@@ -141,7 +141,7 @@ function Verify({ alumnis, students }: Props) {
                               id: user.id,
                               token: token,
                             }),
-                          },
+                          }
                         );
 
                         const data = await response.json();
@@ -173,7 +173,7 @@ function Verify({ alumnis, students }: Props) {
                               id: user.id,
                               token: token,
                             }),
-                          },
+                          }
                         );
 
                         window.location.reload();
