@@ -38,7 +38,7 @@ function AlumiBase() {
         <AlumniBaseInfo />
       </Layout>
     );
-  else if (!signedInUser.verified) {
+  else if (signedInUser.id && !signedInUser.verified) {
     return (
       <Layout>
         <main className="min-h-screen relative min-w-full flex flex-col justify-center items-center text-center">
