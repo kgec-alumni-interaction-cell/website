@@ -39,10 +39,11 @@ function AlumniCard({ alumni }: Props) {
       </div>
 
       <div className="flex flex-col h-1/2 items-center text-base justify-center gap-2 leading-none text-center">
-        <p className="flex gap-1 justify-center items-center">
-          <span className="font-medium">{alumni?.degree} </span>
-          in <span className="font-medium">{alumni?.department}</span>
-        </p>
+        <span className="flex flex-col justify-center items-center my-2">
+          <span className="font-medium">{alumni?.degree}</span> 
+          <span className="text-base">in</span>
+          <span className="flex font-medium">{alumni?.department}</span>
+        </span>
         <p className="flex gap-1 justify-center items-center">
           Works at <span className="font-medium">{alumni?.currWorkplace}</span>
         </p>
@@ -70,8 +71,8 @@ function AlumniCard({ alumni }: Props) {
         </svg>
         Connect
       </Link>
-      <div className="flex justify-between text-sm items-center w-full">
-        <p className="flex gap-1 items-center justify-center">
+      <div className="flex flex-col justify-between text-sm w-full gap-2">
+        <p className="flex gap-1 items-center justify-start">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -88,8 +89,8 @@ function AlumniCard({ alumni }: Props) {
           </svg>
           {alumni?.email}
         </p>
-        <span className="text-gray-300 w-px">{" | "}</span>
-        <p className="flex gap-1 items-center justify-center">
+        {/* <span className="text-gray-300 w-px">{" | "}</span> */}
+        <p className="flex gap-1 items-center justify-start">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
