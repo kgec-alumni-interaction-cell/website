@@ -61,6 +61,15 @@ function AlumiBase() {
         <AlumniBaseInfo />
       </Layout>
     );
+  else if (signedInUser?.id && !signedInUser?.verified)
+    return (
+      <Layout>
+        <div className="mt-10 text-center text-xl leading-9 tracking-tight">
+          Seems like you haven&apos;t been verified yet. Kindly have patience.
+          Once verified, you&apos;ll be able to view the Alumnibase.
+        </div>
+      </Layout>
+    );
   else
     return (
       <Layout>
