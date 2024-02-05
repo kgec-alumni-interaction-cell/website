@@ -28,7 +28,7 @@ function Login() {
       {
         method: "POST",
         body: JSON.stringify(formObj),
-      },
+      }
     );
 
     // console.log(await response.json());
@@ -54,8 +54,8 @@ function Login() {
       if (window.localStorage.getItem("signed-in-user") !== "")
         setSignedInUser(
           JSON.parse(
-            window.localStorage.getItem("signed-in-user") as string,
-          ) as UserType,
+            window.localStorage.getItem("signed-in-user") as string
+          ) as UserType
         );
   }, []);
 
@@ -92,8 +92,8 @@ function Login() {
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
+                      strokeWidth="2"
+                      strokeLinecap="round"
                       stroke-linejoin="round"
                     >
                       <path d="M18 6 6 18" />
