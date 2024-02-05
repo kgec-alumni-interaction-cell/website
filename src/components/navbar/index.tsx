@@ -109,7 +109,7 @@ export default function Navbar() {
     <nav className="h-[3.5rem] px-8 lg:px-24 py-8 bg-indigo-50 flex justify-between items-center sticky top-0 z-10 ">
       <div className="flex items-center gap-2">
           <Image src="/alumni-removebg-preview.png" alt="alumni interaction cell logo" width={50} height={50} />
-        <h2 className="font-bold">KGEC Alumni Asscoiation</h2>
+        <h2 className="font-bold">KGEC Alumni Interaction Cell</h2>
       </div>
       <div className="items-center hidden lg:flex ">
         {navItems.map((item) => (
