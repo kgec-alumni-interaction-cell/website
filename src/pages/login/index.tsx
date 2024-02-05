@@ -2,6 +2,7 @@ import Layout from "@/components/layout";
 import { UserType } from "@/types/types";
 import Link from "next/link";
 import { FormEvent, useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 interface FormType {
   email: string;
@@ -9,6 +10,7 @@ interface FormType {
 }
 
 function Login() {
+  const router = useRouter();
   const [errorMessage, setErrorMessage] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -39,8 +41,8 @@ function Login() {
       console.log(user);
       if (typeof window !== "undefined") {
         localStorage.setItem("signed-in-user", JSON.stringify(user));
-        window.location.reload();
       }
+      router.push("/alumnibase");
     } else {
       setErrorMessage(await response.text());
       setLoading(false);
