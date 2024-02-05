@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Layout from "@/components/layout";
 // import { useSession, signIn } from "next-auth/react";
 import AlumniBase from "./AlumniBase";
@@ -7,30 +8,6 @@ import { useEffect, useState } from "react";
 import useSWR from "swr";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
-
-// export async function getServerSideProps() {
-//   const res = await fetch(
-//     "https://kgec-alumni-backend.onrender.com/users/alumni"
-//   );
-
-//   const alumniList = await res.json();
-//   console.log(alumniList);
-//   return {
-//     props: {
-//       alumniList,
-//     },
-//   };
-// }
-
-// interface Props {
-//   alumniList: Alumni[];
-// }
-// // const [signedInUser, setSignedInUser] = useState<string>(
-// //   (typeof window !== "undefined" &&
-// //   window.localStorage.getItem("signed-in-user")
-// //     ? window.localStorage.getItem("signed-in-user")
-// //     : "") as string
-// // );
 
 function AlumiBase() {
   // const { data: session } = useSession();
@@ -61,27 +38,48 @@ function AlumiBase() {
         <AlumniBaseInfo />
       </Layout>
     );
-  else if (signedInUser?.id && !signedInUser?.verified)
+  else if (signedInUser.id && !signedInUser.verified) {
     return (
       <Layout>
-        <div className="mt-10 text-center text-xl leading-9 tracking-tight">
-          Seems like you haven&apos;t been verified yet. Kindly have patience.
-          Once verified, you&apos;ll be able to view the Alumnibase.
-        </div>
+        <main className="min-h-screen relative min-w-full flex flex-col justify-center items-center text-center">
+          <img
+            src="https://illustrations.popsy.co/white/falling.svg"
+            alt="Falling Illustration"
+            className="w-96 h-96 object-cover"
+          />
+
+          <h1 className={`text-4xl font-black text-indigo-500`}>
+            Your account is not verified yet.
+          </h1>
+          <p className={`text-lg text-zinc-900`}>
+            We will verify your account and notify you via email once it is
+            done.
+          </p>
+          <span className="text-xs absolute right-0 bottom-0 p-4 py-2 text-zinc-800">
+            Illustration by{" "}
+            <a
+              href="https://popsy.co"
+              target="_blank"
+              className="text-indigo-500"
+            >
+              Popsy
+            </a>
+          </span>
+        </main>
       </Layout>
     );
-  else
-    return (
-      <Layout>
-        <AlumniBase
-          alumniList={
-            alumniList
-              ? alumniList.filter((alumni) => alumni.verified)
-              : ([] as Alumni[])
-          }
-        />
-      </Layout>
-    );
+  }
+  return (
+    <Layout>
+      <AlumniBase
+        alumniList={
+          alumniList
+            ? alumniList.filter((alumni) => alumni.verified)
+            : ([] as Alumni[])
+        }
+      />
+    </Layout>
+  );
 }
 
 export default AlumiBase;
