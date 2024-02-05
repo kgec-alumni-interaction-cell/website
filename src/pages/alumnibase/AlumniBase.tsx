@@ -24,10 +24,13 @@ function AlumniBase({ alumniList }: Props) {
 
   const [searchQuery, setSearchQuery] = useState<string | null>(null);
 
-  const [filteredAlumniList, setFilteredAlumniList] = useState<Alumni[]>(
-    alumniList || []
-  );
+  const [filteredAlumniList, setFilteredAlumniList] =
+    useState<Alumni[]>(alumniList);
 
+  // assign the initial value of the filteredAlumniList
+  useEffect(() => {
+    setFilteredAlumniList(alumniList);
+  }, [alumniList]);
 
   const search = (query: string) => {
     setFilteredAlumniList(
@@ -51,7 +54,7 @@ function AlumniBase({ alumniList }: Props) {
           JSON.parse(window.localStorage.getItem("signed-in-user") as string)
         );
 
-    console.log(filteredAlumniList)
+    console.log(filteredAlumniList);
   }, [filteredAlumniList]);
 
   return (
