@@ -39,7 +39,7 @@ function AlumniCard({ alumni }: Props) {
       </div>
 
       <div className="flex flex-col h-1/2 items-center text-base justify-center gap-2 leading-none text-center">
-        <p className="flex gap-1 justify-center items-center">
+        <p className="">
           <span className="font-medium">{alumni?.degree} </span>
           in <span className="font-medium">{alumni?.department}</span>
         </p>
@@ -50,27 +50,8 @@ function AlumniCard({ alumni }: Props) {
           Graduated in <span className="font-medium">{alumni?.gradYr}</span>
         </p>
       </div>
-      <Link
-        href={alumni?.linkedin ? alumni?.linkedin : `mailto:${alumni?.email}`}
-        className="bg-indigo-200 hover:bg-indigo-300 duration-300 text-zinc-800 focus:ring-1 ring-indigo-50 px-3 py-2 rounded-lg leading-none ease-out flex gap-1 items-center justify-center text-base font-normal text-center"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-        >
-          <g fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="10" cy="6" r="4" />
-            <path
-              stroke-linecap="round"
-              d="M21 10h-2m0 0h-2m2 0V8m0 2v2m-1.002 6c.002-.164.002-.331.002-.5c0-2.485-3.582-4.5-8-4.5s-8 2.015-8 4.5S2 22 10 22c2.231 0 3.84-.157 5-.437"
-            />
-          </g>
-        </svg>
-        Connect
-      </Link>
-      <div className="flex justify-between text-sm items-center w-full">
+
+      <div className="flex flex-col gap-1 justify-between text-sm w-full">
         <p className="flex gap-1 items-center justify-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -78,9 +59,9 @@ function AlumniCard({ alumni }: Props) {
             height="16"
             viewBox="0 0 24 24"
           >
-            <g fill="none" stroke="currentColor" stroke-width="1.5">
+            <g fill="none" stroke="currentColor" strokeWidth="1.5">
               <path
-                stroke-linecap="round"
+                strokeLinecap="round"
                 d="M12 18a6 6 0 1 1 5.64-3.946a1.54 1.54 0 0 1-.413.599l-.08.074a1.637 1.637 0 0 1-2.747-1.203V12m0 0a2.4 2.4 0 1 1-4.8 0a2.4 2.4 0 0 1 4.8 0Z"
               />
               <path d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12Z" />
@@ -88,7 +69,6 @@ function AlumniCard({ alumni }: Props) {
           </svg>
           {alumni?.email}
         </p>
-        <span className="text-gray-300 w-px">{" | "}</span>
         <p className="flex gap-1 items-center justify-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -104,6 +84,26 @@ function AlumniCard({ alumni }: Props) {
           {alumni?.waNum}
         </p>
       </div>
+      <Link
+        href={alumni?.linkedin ? alumni?.linkedin : `mailto:${alumni?.email}`}
+        className="bg-indigo-200 hover:bg-indigo-300 duration-300 text-zinc-800 focus:ring-1 ring-indigo-50 px-3 py-2 rounded-lg leading-none ease-out flex gap-1 items-center justify-center text-base font-normal text-center"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+        >
+          <g fill="none" stroke="currentColor" strokeWidth="1.5">
+            <circle cx="10" cy="6" r="4" />
+            <path
+              strokeLinecap="round"
+              d="M21 10h-2m0 0h-2m2 0V8m0 2v2m-1.002 6c.002-.164.002-.331.002-.5c0-2.485-3.582-4.5-8-4.5s-8 2.015-8 4.5S2 22 10 22c2.231 0 3.84-.157 5-.437"
+            />
+          </g>
+        </svg>
+        Connect
+      </Link>
     </div>
   );
 }
