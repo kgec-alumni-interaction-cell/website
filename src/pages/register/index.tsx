@@ -45,10 +45,10 @@ function Register() {
   const uploadImage = async (image: File, name: string) => {
     const formData = new FormData();
     formData.append("file", image);
-    formData.append("upload_preset", "kgecalumnisite");
+    formData.append("upload_preset", "kgecalumniweb");
 
     const response = await fetch(
-      "https://api.cloudinary.com/v1_1/diisii1kl/image/upload",
+      `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload`,
       {
         method: "POST",
         body: formData,
